@@ -22,8 +22,10 @@
 # THE SOFTWARE.
 
 PDFLATEX	?= pdflatex
+SRC		:= $(wildcard *.tex)
+PDF		:= $(SRC:.tex=.pdf)
 
-all: english.pdf
+all: $(PDF)
 
 english.pdf:
 
