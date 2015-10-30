@@ -27,7 +27,7 @@ PDF		:= $(SRC:.tex=.pdf)
 
 all: $(PDF)
 
-english.pdf:
+$(PDF):
 
 %.pdf: %.tex
 	$(PDFLATEX) $< $@
