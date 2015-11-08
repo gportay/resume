@@ -41,6 +41,57 @@ Voici une liste non exhaustive de mes compétences : langage \textit{C/C++} (lib
 \tableofcontents
 \clearpage
 
+\part{\href{https://fr.wikipedia.org/wiki/Board_support_package}{Board Support Package}}
+
+\underline{Mots clés} : \textit{C}, \textit{noyau}, \textit{device-tree}, \textit{électronique}, \textit{SoC}, \textit{bootloader}.\\
+
+J'ai développé le logiciel bas niveau (appelé \textit{BSP}) de deux cartes électroniques développées par \href{http://www.overkiz.com/}{Overkiz}. Ces deux nouvelles platformes sont basées sur deux \href{https://fr.wikipedia.org/wiki/Syst\%C3\%A8me_sur_une_puce}{système-sur-puce} d'Atmel (ou \textit{SoC}\footnote{System-on-Chip.}) : \href{http://www.atmel.com/devices/SAM9G25.aspx}{SAM9G25} et \href{http://www.atmel.com/products/microcontrollers/arm/sama5.aspx}{SAMA5D31}.\\
+
+Mon travail consistait à faire fonctionner notre distribution \textit{Linux} maison. J'ai validé le fonctionnement de l'ensemble des composants de la carte électronique : \textit{DELs}, boutons, réseau, ports \textit{USB}, ports séries (\textit{UART}), bus \textit{I2C}, bus \textit{SPI}, mémoires (\textit{NAND} et \textit{RAM}) ainsi que le controlleur de gestion de l'alimentation (\textit{PMIC}).\\
+
+Le développement de ce \textit{BSP} s'est décomposé en deux parties :
+\begin{itemize}
+\item le \textit{bootstrap} : comme chargeur d'amorçage (\textit{bootloader}) pour démarrer un noyau \textit{Linux}, et
+\item le \textit{device-tree} : pour définir la carte électronique au niveau du noyau \textit{Linux}.
+\end{itemize}
+
+\section{AT91Boostrap}
+
+\underline{Mots clés} : \textit{C}, \textit{UBI}, \textit{bootloader}.\\
+
+Le \textit{bootstrap} est la première partie de code à s'executer après le \textit{ROM code} du \textit{SoC} d'Atmel. Le \textit{ROM code} est appelé \textit{bootloader} de niveau 1. Le \textit{bootstrap} est quant à lui un \textit{bootloader} de niveau 2. Mon développement s'est déroulé en deux étapes :
+\begin{itemize}
+\item ajout du support de la carte électronique et
+\item ajout du support d'UBI\footnote{Unsorted Block Image.}.
+\end{itemize}
+
+\subsection{Support des cartes électroniques}
+
+Ces deux cartes électroniques sont similaires aux cartes d'évaluations proposées par Atmel du point de vue des composants utilisés (\textit{RAM} et \textit{NAND}). Ce fait a grandement facilité le développement\footnote{\url{https://github.com/Overkiz/at91bootstrap/tree/overkiz}.} : j'ai pu ré-utiliser les développements déjà effectués par le fabriquant pour initiliser ces deux composants essentielles pour démarrer le noyau \textit{Linux}.
+\begin{itemize}
+\item at91-kizboxmini : \url{https://github.com/Overkiz/at91bootstrap/commit/d3aec6a5ac990a29947da028f6efb38d01185a15}
+\item at91-kizbox2 : \url{https://github.com/Overkiz/at91bootstrap/commit/9dfe562afd954f07aa39c934e63ec480ddb68e02}
+\end{itemize}
+
+\subsection{Support d'UBI}
+
+\underline{Mots clés} : \textit{C}, \textit{UBI}.\\
+
+J'ai utilisé la capacité d'\textit{AT91Bootstrap} de charger et démarrer un noyau \textit{Linux}. Cela, simplie la séquence usuelle de démarrage qui veut que l'on utilise un bootloader de niveau 3 comme \href{http://www.denx.de/wiki/U-Boot}{u-boot} ou \href{http://www.barebox.org/}{barebox}.\\
+
+Le noyau \textit{Linux} étant ammené à évoluer durant le cicle de vie du produit, j'ai été ammené a fiabilisé les mises-à-jour contre des évennements que l'on ne peut pas maitriser comme les coupures de courants. J'ai dupliqué les volumes critiques tels que le noyau et le device-tree et je les ai stockés dans des volumes UBI. Ainsi les mises-à-jours de volumes : controle de l'intégrité (CRC) et maj. J'ai donc du implémenter la gestion de UBI dans le \textit{bootstrap}.
+
+\section{Kernel et Device-Tree}
+
+Le \textit{device-tree} formalise an niveau noyau les schematiques d'une carte électronique dans un fichier nommé \textbf{.dts}. Je me suis muni de ces schematiques afin d'activer les périphériques utilisés par la platforme. Par ailleurs, c'est dans ce fichier que l'on associe les périphériques et leur drivers via l'attribut \textit{compatible}. J'ai pu ensuite etre capable grâce a cette... de générer une configuration spéciale du noyau afin qu'il ne compile que les pilotes nécéssaire à la gestion de la carte électronique.
+
+Ces deux nouvelles cartes électroniques sont intégrées à la dernière version stable noyau \textit{Linux}\footnote{A partir de la version 4.2.} (on parle de \textit{mainline}).
+\begin{itemize}
+\item at91-kizboxmini : \url{https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/arch/arm/boot/dts/at91-kizboxmini.dts?id=refs/tags/v4.2}
+\item at91-kizbox2 : \url{https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/arch/arm/boot/dts/at91-kizbox2.dts?id=refs/tags/v4.2}
+\end{itemize}
+\clearpage
+
 \part{Projets Personnels}
 
 \section{\href{https://github.com/gazoo74/initramfs/}{InitRAMFS}}
