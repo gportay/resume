@@ -1,0 +1,190 @@
+%% portfolio-french.tex
+%% Copyright 2015 Gaël PORTAY <gael.portay@gmail.com>
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.3
+% of this license or (at your option) any later version.
+% The latest version of this license is in
+%   http://www.latex-project.org/lppl.txt
+% and version 1.3 or later is part of all distributions of LaTeX
+% version 2005/12/01 or later.
+%
+% This work has the LPPL maintenance status `maintained'.
+%
+% The Current Maintainer of this work is Gaël PORTAY.
+%
+% This work consists of the file portfolio-french.tex.
+
+\documentclass[a4paper]{article}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\title{Portfolio}
+\author{Gaël PORTAY}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Je suis ingénieur en informatique, spécialisé en \textit{Linux Embarqué}. J'ai découvert l'informatique à l'âge de 10 ans. Aujourd'hui je totalise un peu plus de 6 ans d'experience dans le monde professionnel. Je suis passionné et curieux : j'aime apprendre et comprendre comment fonctionne les «~choses~». Je suis également auto-didacte et j'aime partager mes experiences et mes connaissances avec les autres.\\
+
+Mon travail étant la partie immergée de l'iceberg, il est par conséquent assez difficile de montrer le fruit de mon travail par des images ou des photos. En lieu et place\footnote{Plus tard, j'illustrerai mes propos par quelques schémas.}, j'expliquerai comment et avec quels outils j'ai réalisé mes travaux. De même, certains de mes développements étant du domaine du propriétaire, je ne présenterai ici que mes développements libres.\\
+
+Je mets en évidence deux projets pour démontrer mes compétences : le \textit{BSP}\footnote{Board Support Package.} pour la partie système d'exploitation au niveau noyau et la partie électronique ; les projets personnels pour la partie système d'exploitation au niveau espace utilisateur. L'annexe montre mon implication vis-à-vis de la communauté du Logiciel Libre.\\
+
+Voici une liste non exhaustive de mes compétences : langage \textit{C/C++} (libc, STL), mécanisme de \textit{polling} (epoll), \textit{Git}, \textit{Systèmes Linux} (espace utilisateur et noyau), scripts \textit{Shell} (POSIX, redirection, pipe...), \textit{Python}, \textit{Makefile}, \textit{Autotools}, \textit{Kconfig}, \textit{Yocto}, \textit{crosstool-ng}, \textit{QEMU}...
+\end{abstract}
+\clearpage
+
+\tableofcontents
+\clearpage
+
+\part{\href{https://fr.wikipedia.org/wiki/Board_support_package}{Board Support Package}}
+
+\underline{Mots clés} : \textit{C}, \textit{noyau}, \textit{device-tree}, \textit{électronique}, \textit{SoC}, \textit{bootloader}.\\
+
+J'ai développé le logiciel bas niveau (appelé \textit{BSP}) de deux cartes électroniques développées par \href{http://www.overkiz.com/}{Overkiz}. Ces deux nouvelles platformes sont basées sur deux \href{https://fr.wikipedia.org/wiki/Syst\%C3\%A8me_sur_une_puce}{système-sur-puce} d'Atmel (ou \textit{SoC}\footnote{System-on-Chip.}) : \href{http://www.atmel.com/devices/SAM9G25.aspx}{SAM9G25} et \href{http://www.atmel.com/products/microcontrollers/arm/sama5.aspx}{SAMA5D31}.\\
+
+Mon travail consistait à faire fonctionner notre distribution \textit{Linux} maison. J'ai validé le fonctionnement de l'ensemble des composants de la carte électronique : \textit{DELs}, boutons, réseau, ports \textit{USB}, ports séries (\textit{UART}), bus \textit{I2C}, bus \textit{SPI}, mémoires (\textit{NAND} et \textit{RAM}) ainsi que le controlleur de gestion de l'alimentation (\textit{PMIC}).\\
+
+Le développement de ce \textit{BSP} s'est décomposé en deux parties :
+\begin{itemize}
+\item le \textit{bootstrap} : comme chargeur d'amorçage (\textit{bootloader}) pour démarrer un noyau \textit{Linux}, et
+\item le \textit{device-tree} : pour définir la carte électronique au niveau du noyau \textit{Linux}.
+\end{itemize}
+
+\section{AT91Boostrap}
+
+\underline{Mots clés} : \textit{C}, \textit{UBI}, \textit{bootloader}.\\
+
+Le \textit{bootstrap} est la première partie de code à s'executer après le \textit{ROM code} du \textit{SoC} d'Atmel. Le \textit{ROM code} est appelé \textit{bootloader} de niveau 1. Le \textit{bootstrap} est quant à lui un \textit{bootloader} de niveau 2. Mon développement s'est déroulé en deux étapes :
+\begin{itemize}
+\item ajout du support de la carte électronique et
+\item ajout du support d'UBI\footnote{Unsorted Block Image.}.
+\end{itemize}
+
+\subsection{Support des cartes électroniques}
+
+Ces deux cartes électroniques sont similaires aux cartes d'évaluations proposées par Atmel du point de vue des composants utilisés (\textit{RAM} et \textit{NAND}). Ce fait a grandement facilité le développement\footnote{\url{https://github.com/Overkiz/at91bootstrap/tree/overkiz}.} : j'ai pu ré-utiliser les développements déjà effectués par le fabriquant pour initiliser ces deux composants essentielles pour démarrer le noyau \textit{Linux}.
+\begin{itemize}
+\item at91-kizboxmini : \url{https://github.com/Overkiz/at91bootstrap/commit/d3aec6a5ac990a29947da028f6efb38d01185a15}
+\item at91-kizbox2 : \url{https://github.com/Overkiz/at91bootstrap/commit/9dfe562afd954f07aa39c934e63ec480ddb68e02}
+\end{itemize}
+
+\subsection{Support d'UBI}
+
+\underline{Mots clés} : \textit{C}, \textit{UBI}.\\
+
+J'ai utilisé la capacité d'\textit{AT91Bootstrap} de charger et démarrer un noyau \textit{Linux}. Cela, simplie la séquence usuelle de démarrage qui veut que l'on utilise un bootloader de niveau 3 comme \href{http://www.denx.de/wiki/U-Boot}{u-boot} ou \href{http://www.barebox.org/}{barebox}.\\
+
+Le noyau \textit{Linux} étant ammené à évoluer durant le cicle de vie du produit, j'ai été ammené a fiabilisé les mises-à-jour contre des évennements que l'on ne peut pas maitriser comme les coupures de courants. J'ai dupliqué les volumes critiques tels que le noyau et le device-tree et je les ai stockés dans des volumes UBI. Ainsi les mises-à-jours de volumes : controle de l'intégrité (CRC) et maj. J'ai donc du implémenter la gestion de UBI dans le \textit{bootstrap}.
+
+\section{Kernel et Device-Tree}
+
+Le \textit{device-tree} formalise an niveau noyau les schematiques d'une carte électronique dans un fichier nommé \textbf{.dts}. Je me suis muni de ces schematiques afin d'activer les périphériques utilisés par la platforme. Par ailleurs, c'est dans ce fichier que l'on associe les périphériques et leur drivers via l'attribut \textit{compatible}. J'ai pu ensuite etre capable grâce a cette... de générer une configuration spéciale du noyau afin qu'il ne compile que les pilotes nécéssaire à la gestion de la carte électronique.
+
+Ces deux nouvelles cartes électroniques sont intégrées à la dernière version stable noyau \textit{Linux}\footnote{A partir de la version 4.2.} (on parle de \textit{mainline}).
+\begin{itemize}
+\item at91-kizboxmini : \url{https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/arch/arm/boot/dts/at91-kizboxmini.dts?id=refs/tags/v4.2}
+\item at91-kizbox2 : \url{https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/arch/arm/boot/dts/at91-kizbox2.dts?id=refs/tags/v4.2}
+\end{itemize}
+\clearpage
+
+\part{Projets Personnels}
+
+\section{\href{https://github.com/gazoo74/initramfs/}{InitRAMFS}}
+
+\underline{Mots clés} : \textit{Busybox}, \textit{OverlayFS}, \textit{GNU/Makefile}, \textit{Kconfig}, \textit{crosstool-NG}, \textit{QEMU}. , \textit{}.\\
+
+Je developpe actuellement un système de fichier racine (\textit{rootfs}) minimal axé autour du projet \href{http://www.busybox.net/}{Busybox}. Il peut être utilisé par un noyau Linux comme un «~\href{https://www.kernel.org/doc/Documentation/initrd.txt}{Initial RAM-Disk}~» ou comme un «~\href{https://www.kernel.org/doc/Documentation/filesystems/ramfs-rootfs-initramfs.txt}{Initial RAMFS}~». InitRAMFS n'a pas pour vocation de concurrencer \href{http://buildroot.org/}{Buildroot} et \href{https://www.yoctoproject.org/}{Yocto}. Il fournit simplement une initialisation minimale d'un système sans écran, que l'on qualifie de système \textit{headless}. InitRAMFS ouvre une connection via une liaison série (\textit{login}, \textit{tty}), avec une gestion automatique du réseau et de l'USB.\\
+
+Le c\oe{}ur du projet est architecturé autour de l'exécutable \textit{Busybox} compilé en \textit{statique} et de plusieurs \textit{scripts shell} de ma propre invention. Il tire partie de plusieurs \textit{applets Busybox} pour remplir les tâches minimales d'un tel système. Il utilise notamment :
+\begin{itemize}
+\item \href{http://www.busybox.net/downloads/BusyBox.html#ifplugd}{ifplugd}, \href{http://www.busybox.net/downloads/BusyBox.html#udhcpc}{udhcpc} et \href{http://www.busybox.net/downloads/BusyBox.html#zcip}{zcip} pour la configuration automatique du réseau via \textit{DHCP} ou la configuration en \textit{Link-Local} à défaut de présence de serveur \textit{DHCP} sur le \textit{LAN},
+\item \href{http://www.busybox.net/downloads/BusyBox.html#mdev}{mdev} pour la gestion dynamique des périphérique (périphérique de stockage de masse, interfaces réseaux via USB...),
+\item \href{http://www.busybox.net/downloads/BusyBox.html#syslogd}{syslogd} et \href{http://www.busybox.net/downloads/BusyBox.html#klogd}{syslogd} pour les messages dit de \textit{log}.
+\end{itemize}
+
+InitRAMFS gère de manière dynamique le montage des périphériques de stockage de masse (comme une \textit{clé USB}) dans le point de montage \textbf{/media/<nom-ou-id-du-périphérique>} grâce aux \textit{applets} \href{http://www.busybox.net/downloads/BusyBox.html#mdev}{mdev} et \href{http://www.busybox.net/downloads/BusyBox.html#blkid}{blkid} et d'un \textit{script shell} \href{https://github.com/gazoo74/initramfs/blob/old-fixes-and-dev-need-study/packages-initramfs/mdev/usr/sbin/automount}{automount}.\\
+
+Il configure (et déconfigure) également dynamiquement les interfaces réseaux au branchement (débranchement) des cables via l'applet \href{http://www.busybox.net/downloads/BusyBox.html#ifplugd}{ifplugd}. L'interface obtient une addresse \textit{IP} via \textit{DHCP} ou en \textit{Link-Local} en cas d'erreur.\\
+
+InitRAMFS utilise un \href{https://github.com/gazoo74/initramfs/blob/master/packages-initramfs/ramfs/etc/init}{script shell} en lieu et place du système d'init traditionnel implémenté par l'applet \href{http://www.busybox.net/downloads/BusyBox.html#init}{init}. Pas de necessité de run-level à la sysvinit.\\
+
+J'ai ajouté le support d'\href{https://www.kernel.org/doc/Documentation/filesystems/overlayfs.txt}{OverlayFS} afin de palier au problème de ma volatilité d'un système de fichier racine en \href{https://fr.wikipedia.org/wiki/Ramfs}{RAMFS} : le redémarrage fait perdre toutes traces de modifications. Un système de fichier, stocké sur un support persistent, est monté par dessus le \textit{rootfs}, puis le répertoire racine est remplacé par ce nouveau point montage combinant les deux ... le RAMFS d'initramfs et le système de fichier peresistant via l'applet \href{http://www.busybox.net/downloads/BusyBox.html##chroot}{chroot}. Ainsi, il est possible de modifier les fichiers du rootfs comme de manière persistente. L'initialisation du système se fait en deux étape : la première consiste
+\href{https://github.com/gazoo74/initramfs/blob/master/packages-initramfs/overlay/init}{init}, \href{https://github.com/gazoo74/initramfs/blob/master/packages-initramfs/overlay/etc/init.d/mount-overlay}{mount-overlay}.\\
+
+Le sytème de compilation est basé sur un Makefile utilisant les spécificités additionnelles de GNU/Make. Il est donc indispensable d'utiliser \textit{gmake} pour construire l'initramfs. Par exemple, j'utilise les règles avec des «~\href{https://www.gnu.org/software/make/manual/html_node/Double_002dColon.html}{::}~».
+La commande suivante génère le fichier \textit{initramfs.cpio} : une archive \textit{CPIO} contenant le \textit{rootfs} et utilisé par le noyau Linux lors de sa compilation pour le concaténer à son image et faire du noyau un système complet en une seule et même image.
+\begin{verbatim}
+$ make [initramfs.cpio]
+\end{verbatim}
+La commande suivante permet de générer une image du noyau complete avec son rootfs concaténé.
+\begin{verbatim}
+$ make kernel [KIMAGE=zImage]
+\end{verbatim}
+
+InitRAMFS se destinant au domaine de l'embarqué, l'architecture cible du processeur est souvent différente de celle de la machine qui sert à générer l'image (\textit{ARM}, \textit{MIPS}...). J'ai ajouté la possibilité d'utiliser un environnement de compilation croisé via la variable \textit{CROSS\_COMPILE}.
+\begin{verbatim}
+$ make CROSS_COMPILE=arm-unknown-gnueabi-
+\end{verbatim}
+
+Si la \href{https://fr.wikipedia.org/wiki/Cha\%C3\%AEne_de_compilation}{chaine de compilation croisée} (\textit{toolchain}) n'existe pas, InitRAMFS utilise le projet \href{http://crosstool-ng.org/}{crosstool-NG} pour la générer. La commande suivante permet de compiler la compiler.
+\begin{verbatim}
+$ make CROSS_COMPILE=arm-unknown-gnueabi- toolchain
+\end{verbatim}
+
+InitRAMFS utiles point de vu d'un développeur.
+\href{https://matt.ucc.asn.au/dropbear/dropbear.html}{dropbear} (serveur et client \textit{SSH}), \href{http://git.kernel.org/cgit/utils/kernel/kexec/kexec-tools.git/}{kexec-tools} (execution d'un noyau à chaud) ainsi que \href{http://landley.net/toybox/}{toybox} (un) qui s'installe à la place ou en plus de Buysbox dans \textbf{/media/toybox/}. Ces outils externes sont également compilés en statique.\\
+
+Par ailleurs, j'ai ajouté la possibilité de pouvoir configurer l'image générée avec \href{http://ymorin.is-a-geek.org/projects/kconfig-frontends}{Kconfig} : le même système utilisé par le noyau, \textit{BuildRoot} ou encore \textit{crosstool-NG}.
+\begin{verbatim}
+$ make menuconfig
+\end{verbatim}
+
+Il est possible de compiler ou cross-compiler un noyau puis d'émuler le système noyau + rootfs dans Qemu (GNU/Makefile, Kconfig, scripts Shell, crosstool-ng, Qemu).
+Le but étant d'uiliser un maximum d'applet Busybox\\
+
+InitRAMFS supporte également. Je rencontre actuellement quelques problème avec la gestion du réseau via un pont. Les résolutions. sans necessité les droit administrateurs.
+\href{http://wiki.qemu.org}{QEMU}
+\begin{verbatim}
+$ make runqemu
+\end{verbatim}
+
+\section{\href{https://github.com/gazoo74/mpkg/}{MPKG}}
+
+\underline{Mots clés} : \textit{POSIX}, \textit{script shell}, \textit{grep}, \textit{sed}, \textit{tar}, \textit{wget}.
+
+En parallèle d'\textit{InitRAMFS}, je developpe un système de paquet minimaliste écrit uniquement en \textit{Shell} \href{https://fr.wikipedia.org/wiki/POSIX}{POSIX}. Le but de ce système de paquet est de nécéssiter aucun interpreteur tierce (ni interpretteur \textit{Python}, ni \textit{Lua}, ni \textit{Perl}...). Seulement un interpreteur Shell et quelques outils standard d'un système POSIX (\textit{grep}, \textit{sed}, \textit{tar}, \textit{wget}...). Il est possible de l'utiliser avec un simple système comme \textit{Busybox}.\\
+
+MPKG se veut moins complexe et plus léger que les systèmes de paquets existants (Debian ou RPM) ; il est majoritairement inspiré du formalisme de Debian mais n'est pas compatible avec ce dernier. En effet, le format du paquet est plus simple : une archive \textit{TAR} \textit{gzippée} (image du \textit{rootfs}). Les méta-données du paquets sont stockées dans un chemin spécifique : \textbf{/var/lib/mpkg/<nom-du-paquet>/}.
+Contrairement au paquets Debian ou le format du paquet est une archive de deux archives \textit{TAR} \textit{gzippées} : une pour le \textit{rootfs} (data.tar.gz) et une autre pour les \textit{méta-données} (control.tar.gz).\\
+
+MPKG ne gèrer qu'un minimum de fonctionnalité d'un système de paquet à savoir :
+\begin{itemize}
+\item un nombre restreint de mots-clés pour les meta-informations du paquet : nom du paquet, version et la liste des dépendances.
+\item les scripts de pré et post installation (preinst/postinst)
+\item les scripts de pré et post desinstallation (prerm/postrm)
+\end{itemize}
+
+Ecrire \textit{MPKG} en \textit{Shell POSIX} me permet d'exprimer mes connaissances dans ce langage de script, en usant du mécanisme de parallélisation (pipe) et des redirections.
+\clearpage
+
+\appendix
+\section{Contributions}
+Voici une liste de mes contributions dans différents projets libres :
+\begin{itemize}
+\item \textbf{Linux} : \url{https://git.kernel.org/cgit/linux/kernel/git/next/linux-next.git/log/?id=refs\%2Ftags\%2Fnext-20150610&qt=grep&q=PORTAY}
+\item \textbf{OPKG} : \url{http://git.yoctoproject.org/cgit/cgit.cgi/opkg/log/?qt=grep&q=PORTAY}
+\item \textbf{cURL} : \url{https://github.com/bagder/curl/commits?author=gazoo74}
+\item \textbf{AT91Bootstrap} :
+\begin{itemize}
+\item \url{https://github.com/linux4sam/at91bootstrap/commits?author=gazoo74}
+\item \url{https://github.com/linux4sam/at91bootstrap/pull/25}
+\end{itemize}
+\item \textbf{Dropbear} : \url{https://github.com/mkj/dropbear/commits?author=gazoo74}
+\end{itemize}
+Ainsi que lien vers mes dépots hebergés par GitHub : \url{https://www.github.com/gazoo74}.
+\end{document}
