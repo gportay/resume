@@ -22,15 +22,26 @@
 # THE SOFTWARE.
 
 PDFLATEX	?= pdflatex
+HTMLLATEX	?= htlatex
 SRC		:= $(wildcard *.tex)
 PDF		:= $(SRC:.tex=.pdf)
+HTML		:= $(SRC:.tex=.html)
+
+.PRECIOUS: $(HTML:.html=/index.html)
 
 all: $(PDF)
 
-$(PDF):
+$(PDF) $(HTML):
 
 %.pdf: %.tex
 	$(PDFLATEX) $< $@
 
+%.html: %/index.html
+	ln -sf $< $@
+
+%/index.html: %.tex
+	install -d $(@D)/
+	cd $(@D)/ && $(HTMLLATEX) ../$< && ln -sf $*.html $(@F)
+
 clean:
-	rm -f *.pdf
+	rm -f *.pdf *.html
