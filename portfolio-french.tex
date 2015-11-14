@@ -79,9 +79,9 @@ Ces deux cartes électroniques sont similaires aux cartes d'évaluations propos�
 
 \underline{Mots clés} : \textit{C}, \textit{UBI}.\\
 
-J'ai utilisé la capacité d'\textit{AT91Bootstrap} de charger et démarrer un noyau \textit{Linux}. Cela, simplie la séquence usuelle de démarrage qui veut que l'on utilise un bootloader de niveau 3 comme \href{http://www.denx.de/wiki/U-Boot}{u-boot} ou \href{http://www.barebox.org/}{barebox}.\\
+J'ai utilisé la capacité d'\textit{AT91Bootstrap} de charger et démarrer un noyau \textit{Linux}. Cela, simplie la séquence usuelle de démarrage qui veut que l'on utilise un \textit{bootloader} de niveau 3 comme \href{http://www.denx.de/wiki/U-Boot}{u-boot} ou \href{http://www.barebox.org/}{barebox}.\\
 
-Le noyau \textit{Linux} étant ammené à évoluer durant le cicle de vie du produit, j'ai été ammené a fiabilisé les mises-à-jour contre des évennements que l'on ne peut pas maitriser comme les coupures de courants. J'ai dupliqué les volumes critiques tels que le noyau et le device-tree et je les ai stockés dans des volumes UBI. Ainsi les mises-à-jours de volumes : controle de l'intégrité (CRC) et maj. J'ai donc du implémenter la gestion de UBI dans le \textit{bootstrap}.
+Le noyau \textit{Linux} étant ammené à évoluer durant le cicle de vie du produit, j'ai été ammené a fiabilisé les mises-à-jour contre des évennements que l'on ne peut pas maitriser comme les coupures de courants. J'ai dupliqué les volumes critiques tels que le noyau et le \textit{device-tree} et je les ai stockés dans des volumes UBI. Ainsi les mises-à-jours de volumes : controle de l'intégrité (CRC) et maj. J'ai donc du implémenter la gestion de UBI dans le \textit{bootstrap}.
 
 \section{Kernel et Device-Tree}
 
@@ -100,7 +100,7 @@ Ces deux nouvelles cartes électroniques sont intégrées à la dernière versio
 
 \underline{Mots clés} : \textit{Busybox}, \textit{OverlayFS}, \textit{GNU/Makefile}, \textit{Kconfig}, \textit{crosstool-NG}, \textit{QEMU}. , \textit{}.\\
 
-Je developpe actuellement un système de fichier racine (\textit{rootfs}) minimal axé autour du projet \href{http://www.busybox.net/}{Busybox}. Il peut être utilisé par un noyau Linux comme un «~\href{https://www.kernel.org/doc/Documentation/initrd.txt}{Initial RAM-Disk}~» ou comme un «~\href{https://www.kernel.org/doc/Documentation/filesystems/ramfs-rootfs-initramfs.txt}{Initial RAMFS}~». InitRAMFS n'a pas pour vocation de concurrencer \href{http://buildroot.org/}{Buildroot} et \href{https://www.yoctoproject.org/}{Yocto}. Il fournit simplement une initialisation minimale d'un système sans écran, que l'on qualifie de système \textit{headless}. InitRAMFS ouvre une connection via une liaison série (\textit{login}, \textit{tty}), avec une gestion automatique du réseau et de l'USB.\\
+Je developpe actuellement un système de fichier racine (\textit{rootfs}) minimal axé autour du projet \href{http://www.busybox.net/}{Busybox}. Il peut être utilisé par un noyau \textit{Linux} comme un «~\href{https://www.kernel.org/doc/Documentation/initrd.txt}{Initial RAM-Disk}~» ou comme un «~\href{https://www.kernel.org/doc/Documentation/filesystems/ramfs-rootfs-initramfs.txt}{Initial RAMFS}~». \textit{InitRAMFS} n'a pas pour vocation de concurrencer \href{http://buildroot.org/}{Buildroot} et \href{https://www.yoctoproject.org/}{Yocto}. Il fournit simplement une initialisation minimale d'un système sans écran, que l'on qualifie de système \textit{headless}. \textit{InitRAMFS} ouvre une connection via une liaison série (\textit{login}, \textit{tty}), avec une gestion automatique du réseau et de l'USB.\\
 
 Le c\oe{}ur du projet est architecturé autour de l'exécutable \textit{Busybox} compilé en \textit{statique} et de plusieurs \textit{scripts shell} de ma propre invention. Il tire partie de plusieurs \textit{applets Busybox} pour remplir les tâches minimales d'un tel système. Il utilise notamment :
 \begin{itemize}
@@ -109,36 +109,36 @@ Le c\oe{}ur du projet est architecturé autour de l'exécutable \textit{Busybox}
 \item \href{http://www.busybox.net/downloads/BusyBox.html#syslogd}{syslogd} et \href{http://www.busybox.net/downloads/BusyBox.html#klogd}{syslogd} pour les messages dit de \textit{log}.
 \end{itemize}
 
-InitRAMFS gère de manière dynamique le montage des périphériques de stockage de masse (comme une \textit{clé USB}) dans le point de montage \textbf{/media/<nom-ou-id-du-périphérique>} grâce aux \textit{applets} \href{http://www.busybox.net/downloads/BusyBox.html#mdev}{mdev} et \href{http://www.busybox.net/downloads/BusyBox.html#blkid}{blkid} et d'un \textit{script shell} \href{https://github.com/gazoo74/initramfs/blob/old-fixes-and-dev-need-study/packages-initramfs/mdev/usr/sbin/automount}{automount}.\\
+\textit{InitRAMFS} gère de manière dynamique le montage des périphériques de stockage de masse (comme une \textit{clé USB}) dans le point de montage \textbf{/media/<nom-ou-id-du-périphérique>} grâce aux \textit{applets} \href{http://www.busybox.net/downloads/BusyBox.html#mdev}{mdev} et \href{http://www.busybox.net/downloads/BusyBox.html#blkid}{blkid} et d'un \textit{script shell} \href{https://github.com/gazoo74/initramfs/blob/old-fixes-and-dev-need-study/packages-initramfs/mdev/usr/sbin/automount}{automount}.\\
 
 Il configure (et déconfigure) également dynamiquement les interfaces réseaux au branchement (débranchement) des cables via l'applet \href{http://www.busybox.net/downloads/BusyBox.html#ifplugd}{ifplugd}. L'interface obtient une addresse \textit{IP} via \textit{DHCP} ou en \textit{Link-Local} en cas d'erreur.\\
 
-InitRAMFS utilise un \href{https://github.com/gazoo74/initramfs/blob/master/packages-initramfs/ramfs/etc/init}{script shell} en lieu et place du système d'init traditionnel implémenté par l'applet \href{http://www.busybox.net/downloads/BusyBox.html#init}{init}. Pas de necessité de run-level à la sysvinit.\\
+\textit{InitRAMFS} utilise un \href{https://github.com/gazoo74/initramfs/blob/master/packages-initramfs/ramfs/etc/init}{script shell} en lieu et place du système d'init traditionnel implémenté par l'applet \href{http://www.busybox.net/downloads/BusyBox.html#init}{init}. Pas de necessité de run-level à la sysvinit.\\
 
-J'ai ajouté le support d'\href{https://www.kernel.org/doc/Documentation/filesystems/overlayfs.txt}{OverlayFS} afin de palier au problème de ma volatilité d'un système de fichier racine en \href{https://fr.wikipedia.org/wiki/Ramfs}{RAMFS} : le redémarrage fait perdre toutes traces de modifications. Un système de fichier, stocké sur un support persistent, est monté par dessus le \textit{rootfs}, puis le répertoire racine est remplacé par ce nouveau point montage combinant les deux ... le RAMFS d'initramfs et le système de fichier peresistant via l'applet \href{http://www.busybox.net/downloads/BusyBox.html##chroot}{chroot}. Ainsi, il est possible de modifier les fichiers du rootfs comme de manière persistente. L'initialisation du système se fait en deux étape : la première consiste
+J'ai ajouté le support d'\href{https://www.kernel.org/doc/Documentation/filesystems/overlayfs.txt}{OverlayFS} afin de palier au problème de ma volatilité d'un système de fichier racine en \href{https://fr.wikipedia.org/wiki/Ramfs}{RAMFS} : le redémarrage fait perdre toutes traces de modifications. Un système de fichier, stocké sur un support persistent, est monté par dessus le \textit{rootfs}, puis le répertoire racine est remplacé par ce nouveau point montage combinant les deux ... le \textit{RAMFS} d'initramfs et le système de fichier peresistant via l'applet \href{http://www.busybox.net/downloads/BusyBox.html##chroot}{chroot}. Ainsi, il est possible de modifier les fichiers du \textit{rootfs} comme de manière persistente. L'initialisation du système se fait en deux étape : la première consiste
 \href{https://github.com/gazoo74/initramfs/blob/master/packages-initramfs/overlay/init}{init}, \href{https://github.com/gazoo74/initramfs/blob/master/packages-initramfs/overlay/etc/init.d/mount-overlay}{mount-overlay}.\\
 
-Le sytème de compilation est basé sur un Makefile utilisant les spécificités additionnelles de GNU/Make. Il est donc indispensable d'utiliser \textit{gmake} pour construire l'initramfs. Par exemple, j'utilise les règles avec des «~\href{https://www.gnu.org/software/make/manual/html_node/Double_002dColon.html}{::}~».
-La commande suivante génère le fichier \textit{initramfs.cpio} : une archive \textit{CPIO} contenant le \textit{rootfs} et utilisé par le noyau Linux lors de sa compilation pour le concaténer à son image et faire du noyau un système complet en une seule et même image.
+Le sytème de compilation est basé sur un \textit{Makefile} utilisant les spécificités additionnelles de \textit{GNU/Make}. Il est donc indispensable d'utiliser \textit{gmake} pour construire l'\textit{initramfs}. Par exemple, j'utilise les règles avec des «~\href{https://www.gnu.org/software/make/manual/html_node/Double_002dColon.html}{::}~».
+La commande suivante génère le fichier \textit{initramfs.cpio} : une archive \textit{CPIO} contenant le \textit{rootfs} et utilisé par le noyau \textit{Linux} lors de sa compilation pour le concaténer à son image et faire du noyau un système complet en une seule et même image.
 \begin{verbatim}
 $ make [initramfs.cpio]
 \end{verbatim}
-La commande suivante permet de générer une image du noyau complete avec son rootfs concaténé.
+La commande suivante permet de générer une image du noyau complète avec son \textit{rootfs} concaténé.
 \begin{verbatim}
 $ make kernel [KIMAGE=zImage]
 \end{verbatim}
 
-InitRAMFS se destinant au domaine de l'embarqué, l'architecture cible du processeur est souvent différente de celle de la machine qui sert à générer l'image (\textit{ARM}, \textit{MIPS}...). J'ai ajouté la possibilité d'utiliser un environnement de compilation croisé via la variable \textit{CROSS\_COMPILE}.
+\textit{InitRAMFS} se destinant au domaine de l'embarqué, l'architecture cible du processeur est souvent différente de celle de la machine qui sert à générer l'image (\textit{ARM}, \textit{MIPS}...). J'ai ajouté la possibilité d'utiliser un environnement de compilation croisé via la variable \textit{CROSS\_COMPILE}.
 \begin{verbatim}
 $ make CROSS_COMPILE=arm-unknown-gnueabi-
 \end{verbatim}
 
-Si la \href{https://fr.wikipedia.org/wiki/Cha\%C3\%AEne_de_compilation}{chaine de compilation croisée} (\textit{toolchain}) n'existe pas, InitRAMFS utilise le projet \href{http://crosstool-ng.org/}{crosstool-NG} pour la générer. La commande suivante permet de compiler la compiler.
+Si la \href{https://fr.wikipedia.org/wiki/Cha\%C3\%AEne_de_compilation}{chaine de compilation croisée} (\textit{toolchain}) n'existe pas, \textit{InitRAMFS} utilise le projet \href{http://crosstool-ng.org/}{crosstool-NG} pour la générer. La commande suivante permet de compiler la compiler.
 \begin{verbatim}
 $ make CROSS_COMPILE=arm-unknown-gnueabi- toolchain
 \end{verbatim}
 
-InitRAMFS utiles point de vu d'un développeur.
+\textit{InitRAMFS} utiles point de vu d'un développeur.
 \href{https://matt.ucc.asn.au/dropbear/dropbear.html}{dropbear} (serveur et client \textit{SSH}), \href{http://git.kernel.org/cgit/utils/kernel/kexec/kexec-tools.git/}{kexec-tools} (execution d'un noyau à chaud) ainsi que \href{http://landley.net/toybox/}{toybox} (un) qui s'installe à la place ou en plus de Buysbox dans \textbf{/media/toybox/}. Ces outils externes sont également compilés en statique.\\
 
 Par ailleurs, j'ai ajouté la possibilité de pouvoir configurer l'image générée avec \href{http://ymorin.is-a-geek.org/projects/kconfig-frontends}{Kconfig} : le même système utilisé par le noyau, \textit{BuildRoot} ou encore \textit{crosstool-NG}.
@@ -146,10 +146,10 @@ Par ailleurs, j'ai ajouté la possibilité de pouvoir configurer l'image génér
 $ make menuconfig
 \end{verbatim}
 
-Il est possible de compiler ou cross-compiler un noyau puis d'émuler le système noyau + rootfs dans Qemu (GNU/Makefile, Kconfig, scripts Shell, crosstool-ng, Qemu).
-Le but étant d'uiliser un maximum d'applet Busybox\\
+Il est possible de compiler ou cross-compiler un noyau puis d'émuler le système noyau + rootfs dans \textit{Qemu} (\textit{GNU/Makefile}, \textit{Kconfig}, \textit{scripts Shell}, \textit{crosstool-ng}, \textit{Qemu}).
+Le but étant d'uiliser un maximum d'\textit{applet Busybox}\\
 
-InitRAMFS supporte également. Je rencontre actuellement quelques problème avec la gestion du réseau via un pont. Les résolutions. sans necessité les droit administrateurs.
+\textit{InitRAMFS} supporte également. Je rencontre actuellement quelques problème avec la gestion du réseau via un pont. Les résolutions. sans necessité les droit administrateurs.
 \href{http://wiki.qemu.org}{QEMU}
 \begin{verbatim}
 $ make runqemu
@@ -159,16 +159,16 @@ $ make runqemu
 
 \underline{Mots clés} : \textit{POSIX}, \textit{script shell}, \textit{grep}, \textit{sed}, \textit{tar}, \textit{wget}.
 
-En parallèle d'\textit{InitRAMFS}, je developpe un système de paquet minimaliste écrit uniquement en \textit{Shell} \href{https://fr.wikipedia.org/wiki/POSIX}{POSIX}. Le but de ce système de paquet est de nécéssiter aucun interpreteur tierce (ni interpretteur \textit{Python}, ni \textit{Lua}, ni \textit{Perl}...). Seulement un interpreteur Shell et quelques outils standard d'un système POSIX (\textit{grep}, \textit{sed}, \textit{tar}, \textit{wget}...). Il est possible de l'utiliser avec un simple système comme \textit{Busybox}.\\
+En parallèle d'\textit{InitRAMFS}, je developpe un système de paquet minimaliste écrit uniquement en \textit{Shell} \href{https://fr.wikipedia.org/wiki/POSIX}{POSIX}. Le but de ce système de paquet est de nécéssiter aucun interpreteur tierce (ni interpretteur \textit{Python}, ni \textit{Lua}, ni \textit{Perl}...). Seulement un interpreteur \textit{Shell} et quelques outils standard d'un système \textit{POSIX} (\textit{grep}, \textit{sed}, \textit{tar}, \textit{wget}...). Il est possible de l'utiliser avec un simple système comme \textit{Busybox}.\\
 
-MPKG se veut moins complexe et plus léger que les systèmes de paquets existants (Debian ou RPM) ; il est majoritairement inspiré du formalisme de Debian mais n'est pas compatible avec ce dernier. En effet, le format du paquet est plus simple : une archive \textit{TAR} \textit{gzippée} (image du \textit{rootfs}). Les méta-données du paquets sont stockées dans un chemin spécifique : \textbf{/var/lib/mpkg/<nom-du-paquet>/}.
-Contrairement au paquets Debian ou le format du paquet est une archive de deux archives \textit{TAR} \textit{gzippées} : une pour le \textit{rootfs} (data.tar.gz) et une autre pour les \textit{méta-données} (control.tar.gz).\\
+\textit{MPKG} se veut moins complexe et plus léger que les systèmes de paquets existants (\textit{Debian} ou \textit{RPM}) ; il est majoritairement inspiré du formalisme de \textit{Debian} mais n'est pas compatible avec ce dernier. En effet, le format du paquet est plus simple : une archive \textit{TAR} \textit{gzippée} (image du \textit{rootfs}). Les méta-données du paquets sont stockées dans un chemin spécifique : \textbf{/var/lib/mpkg/<nom-du-paquet>/}.
+Contrairement au paquets \textit{Debian} ou le format du paquet est une archive de deux archives \textit{TAR} \textit{gzippées} : une pour le \textit{rootfs} (data.tar.gz) et une autre pour les \textit{méta-données} (control.tar.gz).\\
 
-MPKG ne gèrer qu'un minimum de fonctionnalité d'un système de paquet à savoir :
+\textit{MPKG} ne gèrer qu'un minimum de fonctionnalité d'un système de paquet à savoir :
 \begin{itemize}
 \item un nombre restreint de mots-clés pour les meta-informations du paquet : nom du paquet, version et la liste des dépendances.
-\item les scripts de pré et post installation (preinst/postinst)
-\item les scripts de pré et post desinstallation (prerm/postrm)
+\item les scripts de pré et post installation (\textit{preinst}/\textit{postinst})
+\item les scripts de pré et post desinstallation (\textit{prerm}/\textit{postrm})
 \end{itemize}
 
 Ecrire \textit{MPKG} en \textit{Shell POSIX} me permet d'exprimer mes connaissances dans ce langage de script, en usant du mécanisme de parallélisation (pipe) et des redirections.
