@@ -3,7 +3,7 @@ First you will need to install *LaTeX*, *pdflatex*, *epstopdf* and *Mordern CV* 
 ## [Prerequisite](#=prerequisite)
 This will install LateX for Fedora:
 ```
-sudo yum install -y latexila texlive-latex-bin texlive-moderncv texlive-epstopdf-bin
+sudo yum install -y latexila texlive-latex-bin texlive-moderncv texlive-epstopdf-bin texlive-babel-french
 sudo texhash
 ```
 ## [Compile](#=compile)
