@@ -102,18 +102,18 @@ Ces deux nouvelles cartes électroniques sont intégrées à la dernière versio
 
 Je developpe actuellement un système de fichier racine (\textit{rootfs}) minimal axé autour du projet \href{http://www.busybox.net/}{Busybox}. Il peut être utilisé par un noyau \textit{Linux} comme un «~\href{https://www.kernel.org/doc/Documentation/initrd.txt}{Initial RAM-Disk}~» ou comme un «~\href{https://www.kernel.org/doc/Documentation/filesystems/ramfs-rootfs-initramfs.txt}{Initial RAMFS}~». \textit{InitRAMFS} n'a pas pour vocation de concurrencer \href{http://buildroot.org/}{Buildroot} et \href{https://www.yoctoproject.org/}{Yocto}. Il fournit simplement une initialisation minimale d'un système sans écran, que l'on qualifie de système \textit{headless}. \textit{InitRAMFS} ouvre une connection via une liaison série (\textit{login}, \textit{tty}), avec une gestion automatique du réseau et de l'USB.\\
 
-Le c\oe{}ur du projet est architecturé autour de l'exécutable \textit{Busybox} compilé en \textit{statique} et de plusieurs \textit{scripts shell} de ma propre invention. Il tire partie de plusieurs \textit{applets Busybox} pour remplir les tâches minimales d'un tel système. Il utilise notamment :
+Le c\oe{}ur du projet est architecturé autour de l'exécutable \textit{Busybox} compilé en \textit{statique} et de plusieurs \textit{scripts Shell} de ma propre invention. Il tire partie de plusieurs \textit{applets Busybox} pour remplir les tâches minimales d'un tel système. Il utilise notamment :
 \begin{itemize}
 \item \href{http://www.busybox.net/downloads/BusyBox.html#ifplugd}{ifplugd}, \href{http://www.busybox.net/downloads/BusyBox.html#udhcpc}{udhcpc} et \href{http://www.busybox.net/downloads/BusyBox.html#zcip}{zcip} pour la configuration automatique du réseau via \textit{DHCP} ou la configuration en \textit{Link-Local} à défaut de présence de serveur \textit{DHCP} sur le \textit{LAN},
 \item \href{http://www.busybox.net/downloads/BusyBox.html#mdev}{mdev} pour la gestion dynamique des périphérique (périphérique de stockage de masse, interfaces réseaux via USB...),
 \item \href{http://www.busybox.net/downloads/BusyBox.html#syslogd}{syslogd} et \href{http://www.busybox.net/downloads/BusyBox.html#klogd}{syslogd} pour les messages dit de \textit{log}.
 \end{itemize}
 
-\textit{InitRAMFS} gère de manière dynamique le montage des périphériques de stockage de masse (comme une \textit{clé USB}) dans le point de montage \textbf{/media/<nom-ou-id-du-périphérique>} grâce aux \textit{applets} \href{http://www.busybox.net/downloads/BusyBox.html#mdev}{mdev} et \href{http://www.busybox.net/downloads/BusyBox.html#blkid}{blkid} et d'un \textit{script shell} \href{https://github.com/gazoo74/initramfs/blob/old-fixes-and-dev-need-study/packages-initramfs/mdev/usr/sbin/automount}{automount}.\\
+\textit{InitRAMFS} gère de manière dynamique le montage des périphériques de stockage de masse (comme une \textit{clé USB}) dans le point de montage \textbf{/media/<nom-ou-id-du-périphérique>} grâce aux \textit{applets} \href{http://www.busybox.net/downloads/BusyBox.html#mdev}{mdev} et \href{http://www.busybox.net/downloads/BusyBox.html#blkid}{blkid} et d'un \textit{script Shell} \href{https://github.com/gazoo74/initramfs/blob/old-fixes-and-dev-need-study/packages-initramfs/mdev/usr/sbin/automount}{automount}.\\
 
 Il configure (et déconfigure) également dynamiquement les interfaces réseaux au branchement (débranchement) des cables via l'applet \href{http://www.busybox.net/downloads/BusyBox.html#ifplugd}{ifplugd}. L'interface obtient une addresse \textit{IP} via \textit{DHCP} ou en \textit{Link-Local} en cas d'erreur.\\
 
-\textit{InitRAMFS} utilise un \href{https://github.com/gazoo74/initramfs/blob/master/packages-initramfs/ramfs/etc/init}{script shell} en lieu et place du système d'init traditionnel implémenté par l'applet \href{http://www.busybox.net/downloads/BusyBox.html#init}{init}. Pas de necessité de run-level à la sysvinit.\\
+\textit{InitRAMFS} utilise un \href{https://github.com/gazoo74/initramfs/blob/master/packages-initramfs/ramfs/etc/init}{script Shell} en lieu et place du système d'init traditionnel implémenté par l'applet \href{http://www.busybox.net/downloads/BusyBox.html#init}{init}. Pas de necessité de run-level à la sysvinit.\\
 
 J'ai ajouté le support d'\href{https://www.kernel.org/doc/Documentation/filesystems/overlayfs.txt}{OverlayFS} afin de palier au problème de ma volatilité d'un système de fichier racine en \href{https://fr.wikipedia.org/wiki/Ramfs}{RAMFS} : le redémarrage fait perdre toutes traces de modifications. Un système de fichier, stocké sur un support persistent, est monté par dessus le \textit{rootfs}, puis le répertoire racine est remplacé par ce nouveau point montage combinant les deux ... le \textit{RAMFS} d'initramfs et le système de fichier peresistant via l'applet \href{http://www.busybox.net/downloads/BusyBox.html##chroot}{chroot}. Ainsi, il est possible de modifier les fichiers du \textit{rootfs} comme de manière persistente. L'initialisation du système se fait en deux étape : la première consiste
 \href{https://github.com/gazoo74/initramfs/blob/master/packages-initramfs/overlay/init}{init}, \href{https://github.com/gazoo74/initramfs/blob/master/packages-initramfs/overlay/etc/init.d/mount-overlay}{mount-overlay}.\\
@@ -146,7 +146,7 @@ Par ailleurs, j'ai ajouté la possibilité de pouvoir configurer l'image génér
 $ make menuconfig
 \end{verbatim}
 
-Il est possible de compiler ou cross-compiler un noyau puis d'émuler le système noyau + rootfs dans \textit{Qemu} (\textit{GNU/Makefile}, \textit{Kconfig}, \textit{scripts Shell}, \textit{crosstool-ng}, \textit{Qemu}).
+Il est possible de compiler ou cross-compiler un noyau puis d'émuler le système noyau + rootfs dans \textit{QEMU} (\textit{GNU/Makefile}, \textit{Kconfig}, \textit{scripts Shell}, \textit{crosstool-ng}, \textit{QEMU}).
 Le but étant d'uiliser un maximum d'\textit{applet Busybox}\\
 
 \textit{InitRAMFS} supporte également. Je rencontre actuellement quelques problème avec la gestion du réseau via un pont. Les résolutions. sans necessité les droit administrateurs.
@@ -157,7 +157,7 @@ $ make runqemu
 
 \section{\href{https://github.com/gazoo74/mpkg/}{MPKG}}
 
-\underline{Mots clés} : \textit{POSIX}, \textit{script shell}, \textit{grep}, \textit{sed}, \textit{tar}, \textit{wget}.
+\underline{Mots clés} : \textit{POSIX}, \textit{script Shell}, \textit{grep}, \textit{sed}, \textit{tar}, \textit{wget}.
 
 En parallèle d'\textit{InitRAMFS}, je developpe un système de paquet minimaliste écrit uniquement en \textit{Shell} \href{https://fr.wikipedia.org/wiki/POSIX}{POSIX}. Le but de ce système de paquet est de nécéssiter aucun interpreteur tierce (ni interpretteur \textit{Python}, ni \textit{Lua}, ni \textit{Perl}...). Seulement un interpreteur \textit{Shell} et quelques outils standard d'un système \textit{POSIX} (\textit{grep}, \textit{sed}, \textit{tar}, \textit{wget}...). Il est possible de l'utiliser avec un simple système comme \textit{Busybox}.\\
 
