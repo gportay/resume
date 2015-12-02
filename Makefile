@@ -45,3 +45,6 @@ $(PDF) $(HTML):
 
 clean:
 	rm -f *.pdf *.html
+
+mrproper: clean
+	rm -f *.aux *.lof *.log *.lot *.fls *.out *.toc *.dvi *-converted-to.*
