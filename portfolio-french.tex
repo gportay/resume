@@ -47,7 +47,7 @@ Voici une liste non exhaustive de mes compétences : langage \textit{C/C++} (lib
 
 \underline{Mots clés} : \textit{C}, \textit{noyau}, \textit{device-tree}, \textit{électronique}, \textit{SoC}, \textit{bootloader}.\\
 
-J'ai développé le logiciel bas niveau (appelé \textit{BSP}) de deux nouvelles cartes électroniques développées par \href{http://www.overkiz.com/}{Overkiz}. Ces deux plateformes sont basées sur deux \href{https://fr.wikipedia.org/wiki/Syst\%C3\%A8me_sur_une_puce}{système-sur-puce} d'Atmel (ou \textit{SoC}\footnote{System-on-Chip.}) : \href{http://www.atmel.com/devices/SAM9G25.aspx}{SAM9G25} et \href{http://www.atmel.com/products/microcontrollers/arm/sama5.aspx}{SAMA5D31}.\\
+J'ai développé le logiciel bas niveau (appelé \textit{BSP}) de deux nouvelles cartes électroniques développées par \href{http://www.overkiz.com/}{Overkiz}. Ces deux plateformes sont basées sur deux \href{https://fr.wikipedia.org/wiki/Syst\%C3\%A8me_sur_une_puce}{système-sur-puce} d'\textit{Atmel} (ou \textit{SoC}\footnote{System-on-Chip.}) : \href{http://www.atmel.com/devices/SAM9G25.aspx}{SAM9G25} et \href{http://www.atmel.com/products/microcontrollers/arm/sama5.aspx}{SAMA5D31}.\\
 
 Mon travail consistait à faire fonctionner notre distribution \textit{Linux} maison sur ces deux nouvelles plateformes. J'ai validé le fonctionnement de l'ensemble des composants utilisés sur les deux cartes électroniques : les \textit{DELs}, les boutons, le réseau (\textit{Ethernet}), les différents bus de communication (\textit{UART}, \textit{USB}, \textit{I2C} et \textit{SPI}), les différentes mémoires (\textit{NAND} et \textit{RAM}) ainsi que le contrôleur de gestion de l'alimentation (\textit{PMIC}\footnote{Power Management Integrated Circuit.}).\\
 
@@ -61,7 +61,7 @@ Le développement de ces deux \textit{BSP}s se décompose en deux parties distin
 
 \underline{Mots clés} : \textit{C}, \textit{UBI}, \textit{bootloader}.\\
 
-Le \textit{bootstrap} est le premier logiciel à s’exécuter après la mise sous tension du \textit{SoC} d'Atmel. Il est chargé par le \textit{ROM code} interne du \textit{micro-processeur}. Le \textit{ROM code} est appelé \textit{bootloader} de niveau 1 tandis que le \textit{bootstrap} est appelé \textit{bootloader} de niveau 2. Le rôle du \textit{bootstrap} est d’initialiser les mémoires afin de charger un logiciel depuis une mémoire morte (\textit{ROM}) en mémoire vive (\textit{RAM}) et d’exécuter son contenu. \\
+Le \textit{bootstrap} est le premier logiciel à s’exécuter après la mise sous tension du \textit{SoC} d'\textit{Atmel}. Il est chargé par le \textit{ROM code} interne du \textit{micro-processeur}. Le \textit{ROM code} est appelé \textit{bootloader} de niveau 1 tandis que le \textit{bootstrap} est appelé \textit{bootloader} de niveau 2. Le rôle du \textit{bootstrap} est d’initialiser les mémoires afin de charger un logiciel depuis une mémoire morte (\textit{ROM}) en mémoire vive (\textit{RAM}) et d’exécuter son contenu. \\
 
 Mon développement s'est déroulé en deux étapes :
 \begin{itemize}
@@ -71,7 +71,7 @@ Mon développement s'est déroulé en deux étapes :
 
 \subsection{Support des cartes électroniques}
 
-Ces deux nouvelles cartes électroniques sont similaires aux cartes d'évaluations proposées par Atmel du point de vue des composants utilisés (\textit{RAM} et \textit{NAND}). J'ai ré-utilisé les développements effectués par le fabriquant pour initialiser correctement ces deux mémoires, notamment en terme de timings.
+Ces deux nouvelles cartes électroniques sont similaires aux cartes d'évaluations proposées par \textit{Atmel} du point de vue des composants utilisés (\textit{RAM} et \textit{NAND}). J'ai ré-utilisé les développements effectués par le fabriquant pour initialiser correctement ces deux mémoires, notamment en terme de timings.
 
 \subsection{Support d'UBI}
 
