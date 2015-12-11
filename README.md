@@ -15,6 +15,8 @@ or
 ```
 pdflatex english.tex
 ```
-... voilà! my resume is available under *english.pdf*.
+... voilà! my resume is available under *[english.pdf](pdf/english.pdf)*.
 
 Enjoy!
+
+PS: Check also *[french.pdf](pdf/french.pdf)* and *[french-short.pdf](pdf/french-short.pdf)*.
