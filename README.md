@@ -19,4 +19,7 @@ pdflatex english.tex
 
 Enjoy!
 
-PS: Check also *[french.pdf](pdf/french.pdf)* and *[french-short.pdf](pdf/french-short.pdf)*.
+PS: Check also *[french.pdf](pdf/french.pdf)* and *[french-short.pdf](pdf/french-short.pdf)* or build resumes for *Québec*:
+```
+make quebec
+```

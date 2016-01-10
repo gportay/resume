@@ -33,6 +33,15 @@ all: $(PDF)
 
 $(PDF) $(HTML):
 
+.INTERMEDIATE quebec: french-quebec.pdf english-quebec.pdf
+
+french-quebec.tex english-quebec.tex:
+
+%-quebec.tex: %.tex
+	sed -e '1,/\\begin{document}/                 {s,Engineer,Developer,;s,Ingénieur,Développeur,}' \
+	    -e '/\\section{.*[Ee]xp[eé]riences}/,/^$$/{s,Engineer,Developer,;s,Ingénieur,Développeur,}' \
+	    $< >$@
+
 %.pdf: %.tex
 	$(PDFLATEX) $< $@
 
