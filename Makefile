@@ -33,7 +33,7 @@ all: $(PDF)
 
 $(PDF) $(HTML):
 
-.INTERMEDIATE quebec: french-quebec.pdf english-quebec.pdf
+quebec: french-quebec.pdf english-quebec.pdf
 
 french-quebec.tex english-quebec.tex:
 
