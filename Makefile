@@ -53,7 +53,7 @@ french-quebec.tex english-quebec.tex:
 	cd $(@D)/ && $(HTMLLATEX) ../$< && ln -sf $*.html $(@F)
 
 clean:
-	rm -f *.pdf *.html
+	rm -f *.pdf *.html *-quebec.tex
 
 mrproper: clean
 	rm -f *.aux *.lof *.log *.lot *.fls *.out *.toc *.dvi *-converted-to.*
