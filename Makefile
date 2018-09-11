@@ -29,10 +29,12 @@ HTML		:= $(SRC:.tex=.html)
 
 .PRECIOUS: $(HTML:.html=/index.html)
 
+.PHONY: all
 all: $(PDF)
 
 $(PDF) $(HTML) french-quebec.pdf english-quebec.pdf:
 
+.PHONY: quebec
 quebec: french-quebec.pdf english-quebec.pdf
 
 .INTERMEDIATE: french-quebec.tex english-quebec.tex
@@ -53,8 +55,10 @@ french-quebec.tex english-quebec.tex:
 	install -d $(@D)/
 	cd $(@D)/ && $(HTMLLATEX) ../$< && ln -sf $*.html $(@F)
 
+.PHONY: clean
 clean:
 	rm -f *.pdf *.html *-quebec.tex
 
+.PHONY: mrproper
 mrproper: clean
 	rm -f *.aux *.lof *.log *.lot *.fls *.out *.toc *.dvi *-converted-to.*
