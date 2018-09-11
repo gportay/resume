@@ -38,8 +38,8 @@ $(PDF) $(HTML):
 french-quebec.tex english-quebec.tex:
 
 %-quebec.tex: %.tex
-	sed -e '1,/\\begin{document}/                 {s,Engineer,Developer,;s,Ingénieur,Développeur,}' \
-	    -e '/\\section{.*[Ee]xp[eé]riences}/,/^$$/{s,Engineer,Developer,;s,Ingénieur,Développeur,}' \
+	sed -e "1,/\\begin{document}/{s,Engineer,Developer,;s,Ingénieur,Développeur,}" \
+	    -e "/\\section{.*[Ee]xp[eé]riences}/,/^$$/{s,Engineer,Developer,;s,Ingénieur,Développeur,}" \
 	    $< >$@
 
 %.pdf: %.tex
