@@ -35,6 +35,7 @@ $(PDF) $(HTML):
 
 quebec: french-quebec.pdf english-quebec.pdf
 
+.INTERMEDIATE: french-quebec.tex english-quebec.tex
 french-quebec.tex english-quebec.tex:
 
 %-quebec.tex: %.tex
