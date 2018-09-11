@@ -6,6 +6,10 @@ This will install LaTeX for Fedora:
 sudo yum install -y latexila texlive-latex-bin texlive-moderncv texlive-epstopdf-bin texlive-babel-french
 sudo texhash
 ```
+... and this will install LaTeX for Ubuntu:
+```
+sudo apt-get install -y texlive texlive-latex-extra texlive-fonts-extra texlive-font-utils texlive-lang-french
+```
 ## [Compile](#=compile)
 Simply run...
 ```
