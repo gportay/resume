@@ -31,7 +31,7 @@ HTML		:= $(SRC:.tex=.html)
 
 all: $(PDF)
 
-$(PDF) $(HTML):
+$(PDF) $(HTML) french-quebec.pdf english-quebec.pdf:
 
 quebec: french-quebec.pdf english-quebec.pdf
 
