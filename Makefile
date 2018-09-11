@@ -40,6 +40,11 @@ quebec: french-quebec.pdf english-quebec.pdf
 .INTERMEDIATE: french-quebec.tex english-quebec.tex
 french-quebec.tex english-quebec.tex:
 
+.PHONY: git
+git:
+	git config user.name "Gaël PORTAY"
+	git config user.email "gael.portay@gmail.com"
+
 %-quebec.tex: %.tex
 	sed -e "1,/\\begin{document}/{s,Engineer,Developer,;s,Ingénieur,Développeur,}" \
 	    -e "/\\section{.*[Ee]xp[eé]riences}/,/^$$/{s,Engineer,Developer,;s,Ingénieur,Développeur,}" \
