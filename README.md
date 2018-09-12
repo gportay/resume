@@ -97,8 +97,8 @@ Build the pdf using [docker-run(1)] and [make(1)].
 
 * *July 2010 - September 2015* **Embedded Linux Engineer** *Overkiz SAS, Somfy group*
 
-> Overkiz is specialized in _Cloud Computing_ for _Home-Automation_. It develops a solution which connects objects from Home to _Internet_ (_IoT_). It consists of a gateway that links home-automation devices to its servers. We can control objects from Home thanks a smart-phone and Web-Services. I was part of the Embedded Team who develops Embedded Linux System of gateways.
-> *  I was co-maintainer of our home-made Embedded Linux distribution. I did integration of software from Open-Source community.
+> Overkiz is specialized in _Cloud Computing_ for _Home-Automation_. It develops a solution which connects objects from Home to _Internet_ (_IoT_). It consists of a gateway that links home-automation devices to its servers. We can control objects from Home thanks to a smart-phone and Web-Services. I was part of the Embedded Team who develops Embedded Linux System of gateways.
+> *  I was co-maintainer of our home-made Embedded Linux distribution. I did the integration of software from the Open-Source community.
 > *  I was also responsible for the deployment of the embedded software updates.
 > *  I set up the Yocto Build System that builds the embedded software. It builds from scratch the whole embedded software. Yocto allows to save hours to the embedded developers and minimizes errors when releases are built introduced by human operations.
 > *  I developed home-made frameworks and applications to support new home-automation protocols into our gateways. I was also in charge of developing the application that creates the connection between the box and the server. Frameworks and applications are both developed in C++.
@@ -111,9 +111,9 @@ Build the pdf using [docker-run(1)] and [make(1)].
 
 * **[Atmel at91bootstrap](https://github.com/linux4sam/at91bootstrap/commits?author=gazoo74)** I brought support for UBI. The goal is to improve critical upgrades against unexpected power-cuts. Critical volumes, such as kernels or bootloaders, are duplicated and stored in UBI static volumes. The bootstrap simply checks the volume integrity using update flag from UBI headers.
 
-* **[CURL](https://github.com/bagder/curl/commits?author=gazoo74)** I upgraded libcurl to that it is compatible with the latest PolarSSL Library API. I also fixed a bug with the polling mechanism that causes a time-out while processing SSL handshake with distant server.
+* **[CURL](https://github.com/bagder/curl/commits?author=gazoo74)** I upgraded libcurl to that it is compatible with the latest PolarSSL Library API. I also fixed a bug with the polling mechanism that causes a timeout while processing SSL handshake with the distant server.
 
-* **[OPKG](http://git.yoctoproject.org/cgit/cgit.cgi/opkg/log/?qt=grep&q=PORTAY)** I improved CURL integration to allow libcurl related settings into configuration file. I also fixed unexpected behaviors.
+* **[OPKG](http://git.yoctoproject.org/cgit/cgit.cgi/opkg/log/?qt=grep&q=PORTAY)** I improved CURL integration to allow libcurl related settings into the configuration file. I also fixed unexpected behaviors.
 
 * **[Dropbear](https://github.com/mkj/dropbear/commits?author=gazoo74)** I removed compilation warnings from the entire project.
 

@@ -30,13 +30,13 @@
 \maketitle
 
 \begin{abstract}
-Je suis ingénieur en informatique, spécialisé en \textit{Linux Embarqué}. J'ai découvert l'informatique à l'âge de 10 ans. Aujourd'hui je totalise un peu plus de 6 ans d’expérience dans le monde professionnel. Je suis passionné et curieux : j'aime apprendre et comprendre comment fonctionne les «~choses~». Je suis également autodidacte et j'aime partager mes expériences et mes connaissances avec les autres.\\
+Je suis ingénieur en informatique, spécialisé en \textit{Linux Embarqué}. J'ai découvert l'informatique à l'âge de 10 ans. Aujourd'hui, je totalise un peu plus de 6 ans d’expérience dans le monde professionnel. Je suis passionné et curieux : j'aime apprendre et comprendre comment fonctionne les «~choses~». Je suis également autodidacte et j'aime partager mes expériences et mes connaissances avec les autres.\\
 
-Mon travail étant la partie immergée de l'iceberg, il est par conséquent assez difficile de montrer le fruit de mon travail par des images ou des photos. En lieu et place\footnote{Plus tard, j'illustrerai mes propos par quelques schémas.}, j'expliquerai comment et avec quels outils j'ai réalisé mes travaux. De même, certains de mes développements étant du domaine du propriétaire, je ne présenterai ici que mes développements libres.\\
+Mon travail étant la partie immergée de l'iceberg, il est par conséquent, assez difficile de montrer le fruit de mon travail par des images ou des photos. En lieu et place\footnote{Plus tard, j'illustrerai mes propos par quelques schémas.}, j'expliquerai comment et avec quels outils j'ai réalisé mes travaux. De même, certains de mes développements étant du domaine du propriétaire, je ne présenterai ici que mes développements libres.\\
 
 Je mets en évidence deux projets pour démontrer mes compétences : le \textit{BSP}\footnote{Board Support Package : le logiciel bas niveau d'une carte électronique.} pour la partie électronique ainsi que la partie système d'exploitation au niveau noyau ; et deux projets personnels pour la partie système d'exploitation au niveau espace utilisateur. L'annexe montre mon implication vis-à-vis de la communauté du Logiciel Libre.\\
 
-Voici une liste non exhaustive de mes compétences : langage \textit{C/C++} (libc, STL), mécanisme de \textit{polling} (epoll), \textit{Git}, \textit{Systèmes Linux} (espace utilisateur et noyau), scripts \textit{Shell} (POSIX, redirection, pipe...), \textit{Python}, \textit{Makefile}, \textit{Autotools}, \textit{Kconfig}, \textit{Yocto}, \textit{crosstool-ng}, \textit{QEMU}...
+Voici une liste non-exhaustive de mes compétences : langage \textit{C/C++} (libc, STL), mécanisme de \textit{polling} (epoll), \textit{Git}, \textit{Systèmes Linux} (espace utilisateur et noyau), scripts \textit{Shell} (POSIX, redirection, pipe...), \textit{Python}, \textit{Makefile}, \textit{Autotools}, \textit{Kconfig}, \textit{Yocto}, \textit{crosstool-ng}, \textit{QEMU}...
 \end{abstract}
 \clearpage
 
@@ -47,7 +47,7 @@ Voici une liste non exhaustive de mes compétences : langage \textit{C/C++} (lib
 
 \underline{Mots clés} : \textit{C}, \textit{noyau}, \textit{device-tree}, \textit{électronique}, \textit{SoC}, \textit{bootloader}.\\
 
-J'ai développé le logiciel bas niveau (appelé \textit{BSP}) de deux nouvelles cartes électroniques développées par \href{http://www.overkiz.com/}{Overkiz}. Ces deux plateformes sont basées sur deux \href{https://fr.wikipedia.org/wiki/Syst\%C3\%A8me_sur_une_puce}{système-sur-puce} d'\textit{Atmel} (ou \textit{SoC}\footnote{System-on-Chip.}) : \href{http://www.atmel.com/devices/SAM9G25.aspx}{SAM9G25} et \href{http://www.atmel.com/products/microcontrollers/arm/sama5.aspx}{SAMA5D31}.\\
+J'ai développé le logiciel bas niveau (appelé \textit{BSP}) de deux nouvelles cartes électroniques développées par \href{http://www.overkiz.com/}{Overkiz}. Ces deux plateformes sont basées sur deux \href{https://fr.wikipedia.org/wiki/Syst\%C3\%A8me_sur_une_puce}{systèmes sur puce} d'\textit{Atmel} (ou \textit{SoC}\footnote{System-on-Chip.}) : \href{http://www.atmel.com/devices/SAM9G25.aspx}{SAM9G25} et \href{http://www.atmel.com/products/microcontrollers/arm/sama5.aspx}{SAMA5D31}.\\
 
 Mon travail consistait à faire fonctionner notre distribution \textit{Linux} maison sur ces deux nouvelles plateformes. J'ai validé le fonctionnement de l'ensemble des composants utilisés sur les deux cartes électroniques : les \textit{DELs}, les boutons, le réseau (\textit{Ethernet}), les différents bus de communication (\textit{UART}, \textit{USB}, \textit{I2C} et \textit{SPI}), les différentes mémoires (\textit{NAND} et \textit{RAM}) ainsi que le contrôleur de gestion de l'alimentation (\textit{PMIC}\footnote{Power Management Integrated Circuit.}).\\
 
@@ -71,23 +71,23 @@ Mon développement s'est déroulé en deux étapes :
 
 \subsection{Support des cartes électroniques}
 
-Ces deux nouvelles cartes électroniques sont similaires aux cartes d'évaluations proposées par \textit{Atmel} du point de vue des composants utilisés (\textit{RAM} et \textit{NAND}). J'ai ré-utilisé les développements effectués par le fabriquant pour initialiser correctement ces deux mémoires, notamment en terme de timings.
+Ces deux nouvelles cartes électroniques sont similaires aux cartes d'évaluations proposées par \textit{Atmel} du point de vue des composants utilisés (\textit{RAM} et \textit{NAND}). J'ai réutilisé les développements effectués par le fabricant pour initialiser correctement ces deux mémoires, notamment en terme de timings.
 
 \subsection{Support d'UBI}
 
 \underline{Mots clés} : \textit{C}, \textit{UBI}.\\
 
-Le noyau \textit{Linux} étant amené à évoluer durant le cycle de vie du produit, j'ai fiabilisé ses mises-à-jour contre des évènements que l'on ne peut pas maîtriser comme les coupures de courants. Pour ce faire, j'ai dupliqué tous les éléments critiques pouvant être soumis à des mises-à-jour et j'ai utilisé la technologie \textit{UBI} pour détecter leur intégrité via les \textit{méta-données}\footnote{Le marqueur de mise-à-jour du volume dans la table des volumes et le Contrôle de Redondance Cyclique (\textit{CRC}).} liées à cette technologie.\\
+Le noyau \textit{Linux} étant amené à évoluer durant le cycle de vie du produit, j'ai fiabilisé ses mises à jour contre des évènements que l'on ne peut pas maîtriser comme les coupures de courant. Pour ce faire, j'ai dupliqué tous les éléments critiques pouvant être soumis à des mises à jour et j'ai utilisé la technologie \textit{UBI} pour détecter leur intégrité via les \textit{méta-données}\footnote{Le marqueur de mise à jour du volume dans la table des volumes et le Contrôle de Redondance Cyclique (\textit{CRC}).} liées à cette technologie.\\
 
 Chaque élément critique est par conséquent stocké deux fois dans la partition \textit{UBI}. Une première fois sous son propre nom (exemple : «~\textbf{kernel}~») et une seconde fois sous son nom suivi du suffixe «~\textit{-spare}~» (exemple : «~\textbf{kernel-spare}~»).\\
 
-La procédure de mise-à-jour consiste à mettre à jour d'abord le volume principal, puis le volume de rechange. Ainsi, si la coupure de courant a lieu lors de la mise-à-jour du premier volume, alors on détecte sa non-intégrité grâce à la technologie \textit{UBI} et on charge le second. Si la coupure de courant a lieu lors de la mise-à-jour du second volume, on charge quoi qu'il arrive le premier volume car celui ci est valide. La procédure de mise-à-jour doit prendre en compte une reprise sur erreur et reprendre la mise-à-jour là où elle a été interrompue.\\
+La procédure de mise à jour consiste à mettre à jour d'abord le volume principal, puis le volume de rechange. Ainsi, si la coupure de courant a lieu lors de la mise à jour du premier volume, alors on détecte sa non-intégrité grâce à la technologie \textit{UBI} et on charge le second. Si la coupure de courant a lieu lors de la mise à jour du second volume, on charge quoi qu'il arrive le premier volume car celui-ci est valide. La procédure de mise à jour doit prendre en compte une reprise sur erreur et reprendre la mise à jour là où elle a été interrompue.\\
 
 Comme ni le \textit{ROM code}, ni le \textit{bootstrap} ne prennent en charge la gestion d'\textit{UBI}, j'ai implémenté cette fonctionnalité\footnote{Cette fonctionnalité est en cours de soumission pour être intégrée au projet. Elle est disponible via l'\textit{URL} \url{https://github.com/Overkiz/at91bootstrap/commit/be87d62fef7d11f7cf77c182ec9e76f89bdc9c78}}.
 
 \section{Kernel et Device-Tree}
 
-Le \textit{device-tree} est un langage qui formalise les schématiques d'une carte électronique an niveau noyau. Muni des schématiques des deux nouvelles plateformes, j'ai créé leur fichiers descriptifs en activant uniquement les périphériques utilisés. Par ailleurs, c'est dans ce fichier que l'on associe un périphérique à son \textit{pilote} (\textit{driver}). Grâce à ce couple périphérique/pilote, j'ai généré une configuration spéciale du noyau pour chaque plateforme afin que ce dernier n’intègre que les pilotes nécessaires à la gestion de la carte électronique.\\
+Le \textit{device-tree} est un langage qui formalise les schématiques d'une carte électronique an niveau noyau. Muni des schématiques des deux nouvelles plateformes, j'ai créé leur fichier descriptif en activant uniquement les périphériques utilisés. Par ailleurs, c'est dans ce fichier que l'on associe un périphérique à son \textit{pilote} (\textit{driver}). Grâce à ce couple périphérique/pilote, j'ai généré une configuration spéciale du noyau pour chaque plateforme afin que ce dernier n’intègre que les pilotes nécessaires à la gestion de la carte électronique.\\
 
 Ces deux nouvelles cartes électroniques sont intégrées à la dernière version stable du noyau \textit{Linux}\footnote{A partir de la version 4.2.} (on parle de \textit{mainline}).
 \begin{itemize}
@@ -143,13 +143,13 @@ $ make kernel [KIMAGE=zImage]
 $ make CROSS_COMPILE=arm-unknown-gnueabi-
 \end{verbatim}
 
-Si la \href{https://fr.wikipedia.org/wiki/Cha\%C3\%AEne_de_compilation}{chaine de compilation croisée} (\textit{toolchain}) n'existe pas, \textit{InitRAMFS} utilise le projet \href{http://crosstool-ng.org/}{crosstool-NG} pour la générer. La commande suivante permet de la compiler.
+Si la \href{https://fr.wikipedia.org/wiki/Cha\%C3\%AEne_de_compilation}{chaîne de compilation croisée} (\textit{toolchain}) n'existe pas, \textit{InitRAMFS} utilise le projet \href{http://crosstool-ng.org/}{crosstool-NG} pour la générer. La commande suivante permet de la compiler.
 
 \begin{verbatim}
 $ make CROSS_COMPILE=arm-unknown-gnueabi- toolchain
 \end{verbatim}
 
-\textit{InitRAMFS} se veut utile du point de vue d'un développeur \textit{BSP}. Le projet intègre d'autre projets comme \href{https://matt.ucc.asn.au/dropbear/dropbear.html}{dropbear} (serveur et client \textit{SSH}), \href{http://git.kernel.org/cgit/utils/kernel/kexec/kexec-tools.git/}{kexec-tools} (execution d'un noyau à chaud) ou encore \href{http://landley.net/toybox/}{toybox} (un autre projet comme \textit{Busybox} qui s'installe à la place ou en plus dans \textbf{/media/toybox/}). Ces autres outils sont également compilés en statique.\\
+\textit{InitRAMFS} se veut utile du point de vue d'un développeur \textit{BSP}. Le projet intègre d'autre projets comme \href{https://matt.ucc.asn.au/dropbear/dropbear.html}{dropbear} (serveur et client \textit{SSH}), \href{http://git.kernel.org/cgit/utils/kernel/kexec/kexec-tools.git/}{kexec-tools} (exécution d'un noyau à chaud) ou encore \href{http://landley.net/toybox/}{toybox} (un autre projet comme \textit{Busybox} qui s'installe à la place ou en plus dans \textbf{/media/toybox/}). Ces autres outils sont également compilés en statique.\\
 
 Par ailleurs, j'ai ajouté la possibilité de pouvoir configurer l'image générée avec \href{http://ymorin.is-a-geek.org/projects/kconfig-frontends}{Kconfig} : le même système utilisé par le noyau, \textit{BuildRoot} ou encore \textit{crosstool-NG}.
 
@@ -157,7 +157,7 @@ Par ailleurs, j'ai ajouté la possibilité de pouvoir configurer l'image génér
 $ make menuconfig
 \end{verbatim}
 
-\textit{InitRAMFS} supporte également l'émulation via \href{http://wiki.qemu.org}{QEMU}. Je rencontre actuellement quelques problème avec la gestion du réseau via un pont. Les résolutions \textit{DNS} ne semble pas fonctionner. Une configuration spéciale permet de se passer des droits administrateurs \textit{root}.
+\textit{InitRAMFS} supporte également l'émulation via \href{http://wiki.qemu.org}{QEMU}. Je rencontre actuellement quelques problèmes avec la gestion du réseau via un pont. Les résolutions \textit{DNS} ne semblent pas fonctionner. Une configuration spéciale permet de se passer des droits administrateurs \textit{root}.
 
 \begin{verbatim}
 $ make runqemu
@@ -167,13 +167,13 @@ $ make runqemu
 
 \underline{Mots clés} : \textit{POSIX}, \textit{script Shell}, \textit{grep}, \textit{sed}, \textit{tar}, \textit{wget}.\\
 
-En parallèle au développement d'\textit{InitRAMFS}, je développe un système de paquet minimaliste écrit uniquement en \textit{Shell} \href{https://fr.wikipedia.org/wiki/POSIX}{POSIX}. \textit{MPKG} ne nécessite aucun interpréteur tierce (ni \textit{Python}, ni \textit{Lua}, ni \textit{Perl}...) ; il recquière uniquement un interpréteur \textit{Shell} et quelques outils standards que l'on retrouve sur n'importe quel système \textit{POSIX} minimal (\textit{grep}, \textit{sed}, \textit{tar}, \textit{wget}...). Par conséquent, il est possible de l'utiliser avec un simple système comme \textit{Busybox}.\\
+En parallèle au développement d'\textit{InitRAMFS}, je développe un système de paquet minimaliste écrit uniquement en \textit{Shell} \href{https://fr.wikipedia.org/wiki/POSIX}{POSIX}. \textit{MPKG} ne nécessite aucun interpréteur tierce (ni \textit{Python}, ni \textit{Lua}, ni \textit{Perl}...) ; il requiert uniquement un interpréteur \textit{Shell} et quelques outils standards que l'on retrouve sur n'importe quel système \textit{POSIX} minimal (\textit{grep}, \textit{sed}, \textit{tar}, \textit{wget}...). Par conséquent, il est possible de l'utiliser avec un simple système comme \textit{Busybox}.\\
 
-\textit{MPKG} se veut moins complexe et plus léger que les systèmes de paquets existants (\textit{Debian} ou \textit{RPM}\footnote{RedHat Package Manager.}) ; il est majoritairement inspiré du formalisme de \textit{Debian} mais n'est en aucun cas compatible avec ce dernier.\\
+\textit{MPKG} se veut moins complexe et plus léger que les systèmes de paquets existants (\textit{Debian} ou \textit{RPM}\footnote{RedHat Package Manager.}) ; il est majoritairement inspiré du formalisme de \textit{Debian} mais n'est, en aucun cas, compatible avec ce dernier.\\
 
 Le format binaire du paquet est simple : une archive \textit{TAR} \textit{gzippée} représentant une archive des données à partir de la racine (\textit{rootfs}). L’extension est \textbf{.tgz}. Les \textit{méta-données} du paquet sont stockées dans un chemin spécifique : \textbf{/var/lib/mpkg/<nom-du-paquet>/}.\\
 
-Ce format est à comparer à celui utilisé par \textit{Debian} où ils ont fait le choix de créer une archive plus complexe en séparant les données utiles du paquet et des \textit{meta-données}. Un paquet \textit{Debian} est une archive \textit{AR} de deux sous archives \textit{TAR} \textit{gzippées} : une pour le \textit{rootfs} (\textbf{data.tar.gz}) et une autre pour les \textit{méta-données} (\textbf{control.tar.gz}). Cette archive \textit{AR} contient également un fichier supplémentaire définissant le version binaire du format du paquet (\textbf{debian-binary}).\\
+Ce format est à comparer à celui utilisé par \textit{Debian} où ils ont fait le choix de créer une archive plus complexe en séparant les données utiles du paquet et des \textit{meta-données}. Un paquet \textit{Debian} est une archive \textit{AR} de deux sous archives \textit{TAR} \textit{gzippées} : une pour le \textit{rootfs} (\textbf{data.tar.gz}) et une autre pour les \textit{méta-données} (\textbf{control.tar.gz}). Cette archive \textit{AR} contient également un fichier supplémentaire définissant la version binaire du format du paquet (\textbf{debian-binary}).\\
 
 \textit{MPKG} ne gère que les fonctionnalités essentielles d'un système de paquet. A savoir :
 \begin{itemize}

@@ -39,8 +39,8 @@
 \subsection{Professionnelles}
 \cventry{Juillet 2010--Septembre 2015}{Ingénieur Linux Embarqué}{Overkiz SAS, groupe Somfy}{Archamps}{}{Overkiz est une entreprise spécialisée dans le «~\textit{Cloud Computing}~» pour la domotique. Elle propose une solution qui connecte les objets de la maison à \textit{Internet} (\textit{IoT}). Elle se compose d'une passerelle qui fait le lien entre les périphériques domotiques et ses serveurs. Il est possible de piloter ses objets de la maison grâce à son smart-phone et des Web-Services. J'ai fait partie de l'équipe qui développe le système Linux embarqué par la passerelle.\newline{}
 \begin{itemize}
-\item J'étais co-responsable de la distribution Linux embarquée. J’intégrais des outils issus de la communauté du logiciel libre.
-\item J'étais responsable du déploiement des mises-à-jour du logiciel embarqué.
+\item J'étais coresponsable de la distribution Linux embarquée. J’intégrais des outils issus de la communauté du logiciel libre.
+\item J'étais responsable du déploiement des mises à jour du logiciel embarqué.
 \item J’ai mis en place le système de «~Build automatisé~» Yocto. Cet outil construit l’intégralité du système embarqué de la passerelle. Yocto permet de gagner de nombreuses heures à l’équipe tout en minimisant les erreurs liées à des interventions humaines lors de la construction de nouvelles versions.
 \item J'ai développé des frameworks internes et des applications ajoutant la prise en charge de nouveaux protocoles domotiques. J’ai été en charge du développement de l’application responsable du maintien de la connexion entre la passerelle et le serveur. Les frameworks et les applications sont développés en C++.
 \item J'ai développé des modules noyaux et ajouté le support de deux nouvelles cartes électroniques développées par notre équipe dans le noyau Linux.
@@ -48,15 +48,15 @@
 \end{itemize}
 }
 \subsection{Stages}
-\cventry{2009}{Stage de Master}{LC Mobility}{Australie}{}{LC Mobility est une entreprise spécialisée dans l’accueil de doctorants étrangers. J’ai effectué une étude de marché sur la mobilité des étudiants Australiens, en Australie.}
-\cventry{2008}{Stage Ingénieur de 3ème année}{Freescale Semiconductors}{Toulouse}{}{J'ai été responsable du développement du pilote de charge de batterie de la plateforme de téléphonie mobile de Freescale (ARM-11). Ce téléphone mobile est alimentée par une batterie Li-ion. Il fonctionne sous Nokia S60 (Symbian OS). J'ai développé le pilote en C++ en utilisant les mécanismes propres à Symbian.}
-\cventry{2007}{Stage Ingénieur de 2ème année}{Sagem Monetel}{Valence}{}{J’ai été chargé d’optimiser l’emprunte mémoire (dynamique et statique) d'une application C embarquée dans un terminal de paiement bancaire. J’ai utilisé les fichiers listing et mapping générés par le compilateur libre GNU/GCC pour localiser les parties de code utilisant le plus de ressources mémoires. J’ai réduit la taille de l’application de plus de 30\%.}
-\cventry{2004}{Stage Technicien de 2ème année de DUT}{Sagem Monetel}{Valence}{}{J’ai eut la charge de porter une application C embarquée vers le compilateur libre GNU/GCC. J’ai également développé un outil de test de performances afin de démontrer la puissance du terminal de paiement durant une transaction bancaire.}
+\cventry{2009}{Stage de Master}{LC Mobility}{Australie}{}{LC Mobility est une entreprise spécialisée dans l’accueil de doctorants étrangers. J’ai effectué une étude de marché sur la mobilité des étudiants australiens, en Australie.}
+\cventry{2008}{Stage Ingénieur de 3e année}{Freescale Semiconductors}{Toulouse}{}{J'ai été responsable du développement du pilote de charge de batterie de la plateforme de téléphonie mobile de Freescale (ARM-11). Ce téléphone mobile est alimenté par une batterie Li-ion. Il fonctionne sous Nokia S60 (Symbian OS). J'ai développé le pilote en C++ en utilisant les mécanismes propres à Symbian.}
+\cventry{2007}{Stage Ingénieur de 2e année}{Sagem Monetel}{Valence}{}{J’ai été chargé d’optimiser l’emprunte mémoire (dynamique et statique) d'une application C embarquée dans un terminal de paiement bancaire. J’ai utilisé les fichiers listing et mapping générés par le compilateur libre GNU/GCC pour localiser les parties de code utilisant le plus de ressources mémoires. J’ai réduit la taille de l’application de plus de 30 \%.}
+\cventry{2004}{Stage Technicien de 2e année de DUT}{Sagem Monetel}{Valence}{}{J’ai eut la charge de porter une application C embarquée vers le compilateur libre GNU/GCC. J’ai également développé un outil de test de performance afin de démontrer la puissance du terminal de paiement durant une transaction bancaire.}
 \subsection{Contributions Open-Source}
 \cvitem{\href{https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/log/?qt=grep&q=PORTAY}{Noyau Linux}}{J'ai ajouté deux nouvelles plateformes basées sur des SoC d'Atmel (device-tree).}
-\cvitem{\href{https://github.com/linux4sam/at91bootstrap/commits?author=gazoo74}{Atmel at91bootstrap}}{J'ai ajouté le support d'UBI. Le but est d'améliorer les mises-à-jour critiques vis-à-vis d'éventuelles coupures de courants. Les volumes critiques, tels que les noyaux ou les bootloaders, sont dupliqués et stockés dans des volumes UBI statiques. Le bootstrap vérifie simplement l'intégrité du volume en utilisant le bit de mise-à-jour présent dans l'en-tête UBI.}
-\cvitem{\href{https://github.com/bagder/curl/commits?author=gazoo74}{CURL}}{J'ai mis-à-jour libcurl afin qu'il soit compatible avec la dernière version des API de la librairie PolarSSL. J'ai également corrigé un bogue avec le mécanisme de polling qui entrainait time-out lors de la négociation SSL avec le serveur distant.}
-\cvitem{\href{http://git.yoctoproject.org/cgit/cgit.cgi/opkg/log/?qt=grep&q=PORTAY}{OPKG}}{J'ai améliorer l'intégration de CURL en autorisant certaines options liés à libcurl dans le fichier de configuration. J'ai également corrigés des comportements inattendus.}
+\cvitem{\href{https://github.com/linux4sam/at91bootstrap/commits?author=gazoo74}{Atmel at91bootstrap}}{J'ai ajouté le support d'UBI. Le but est d'améliorer les mises à jour critiques vis-à-vis d'éventuelles coupures de courant. Les volumes critiques, tels que les noyaux ou les bootloaders, sont dupliqués et stockés dans des volumes UBI statiques. Le bootstrap vérifie simplement l'intégrité du volume en utilisant le bit de mise à jour présent dans l'en-tête UBI.}
+\cvitem{\href{https://github.com/bagder/curl/commits?author=gazoo74}{CURL}}{J'ai mis à jour libcurl afin qu'il soit compatible avec la dernière version des API de la librairie PolarSSL. J'ai également corrigé un bogue avec le mécanisme de polling qui entraînait un timeout lors de la négociation SSL avec le serveur distant.}
+\cvitem{\href{http://git.yoctoproject.org/cgit/cgit.cgi/opkg/log/?qt=grep&q=PORTAY}{OPKG}}{J'ai amélioré l'intégration de CURL en autorisant certaines options liées à libcurl dans le fichier de configuration. J'ai également corrigé des comportements inattendus.}
 \cvitem{\href{https://github.com/mkj/dropbear/commits?author=gazoo74}{Dropbear}}{J'ai corrigé les warnings de compilation du projet.}
 \subsection{Divers}
 \cventry{2000--2006}{Emplois saisonniers}{Plusieurs employeurs}{}{}{}
@@ -64,14 +64,14 @@
 \section{Éducation}
 \cventry{2008--2009}{Master MAE}{IAE}{Grenoble}{\textit{Bac +5}}{Année spéciale de Master en Management des Administrations et des Entreprises.}
 \cventry{2005--2008}{3I}{Polytech'Grenoble}{Grenoble}{\textit{Bac +5}}{Diplôme d’ingénieur en Informatique Industrielle et Instrumentation.}
-\cventry{2004--2005}{Licence TIC}{Université de Savoie}{Chambéry}{\textit{Bac +3}}{2ème année de Licence en Technologie de l’Information et de la Communication.}
+\cventry{2004--2005}{Licence TIC}{Université de Savoie}{Chambéry}{\textit{Bac +3}}{2e année de Licence en Technologie de l’Information et de la Communication.}
 \cventry{2002--2004}{DUT ISI}{IUT de Valence}{Valence}{\textit{Bac +2}}{Diplôme universitaire de Technologie en Informatique et Systèmes Industriels.}
-\cventry{2001--2002}{DEUG SV}{Université de Savoie}{Chambéry}{\textit{Bac +2}}{1ère année de Diplôme d’Etudes Universitaire Général en Science de la Vie.}
+\cventry{2001--2002}{DEUG SV}{Université de Savoie}{Chambéry}{\textit{Bac +2}}{1ère année de Diplôme d’Etudes Universitaires Générales en Science de la Vie.}
 
 \section{Projets}
-\cventry{2009}{LHOG Minatec}{Amplificateur 900MHz}{Grenoble}{}{Conception d'un amplificateur GSM-900 au LHOG Minatec (laboratoire de micro-nano technologie). Conception, simulation, routage, assemblage, tests et caractérisation.}
-\cventry{2008}{LHOG Minatec}{Convertisseur Analogique-Numérique CMOS 6-bits}{Grenoble}{}{Conception d'un convertisseur analogique-numérique 6-bits utilisant la technologie 0,35\textmu m au CIME Minatec (laboratoire de micro-nano technologie). Les comparateurs CMOS ont été conçus via le logiciel Cadense, le correcteur et le décodeur ont été développé en VHDL.}
-\cventry{2006}{Polytech'Grenoble}{Assembleur HC12}{Grenoble}{}{Conception d'un assembleur 2-passes pour le jeu d'instruction 68HC12. Cette outil en ligne de commande a été développé en C sur Linux.}
+\cventry{2009}{LHOG Minatec}{Amplificateur 900MHz}{Grenoble}{}{Conception d'un amplificateur GSM-900 au LHOG Minatec (laboratoire de micro nano technologie). Conception, simulation, routage, assemblage, tests et caractérisation.}
+\cventry{2008}{LHOG Minatec}{Convertisseur Analogique Numérique CMOS 6-bits}{Grenoble}{}{Conception d'un convertisseur analogique numérique 6-bits utilisant la technologie 0,35\textmu au CIME Minatec (laboratoire de micro nano technologie). Les comparateurs CMOS ont été conçus via le logiciel Cadense, le correcteur et le décodeur ont été développés en VHDL.}
+\cventry{2006}{Polytech'Grenoble}{Assembleur HC12}{Grenoble}{}{Conception d'un assembleur en 2 passes pour le jeu d'instruction 68HC12. Cet outil en ligne de commande a été développé en C sur Linux.}
 \cventry{2005}{Université de Savoie}{Windows Desktop Search}{Chambéry}{}{Conception d'un moteur de recherche rapide pour Windows. J'ai développé cette application en Java sous l'environnement de développement Eclipse. Le moteur indexe tous les fichiers de l'ordinateur et permet à l'utilisateur de rechercher des fichiers via des expressions régulières. L'UI a été développée via le framework Swing.}
 \cventry{2004}{IUT de Valence}{Moteur de jeu 2D}{Valence}{}{Conception d'un moteur de jeu 2D basic en utilisant les librairies Microsoft Direct Draw. Le joueur se déplace sur une carte 2D avec gestion des collisions. J'ai développé le moteur en C++.}
 
