@@ -26,11 +26,12 @@ HTMLLATEX	?= htlatex
 SRC		:= $(wildcard *.tex)
 PDF		:= $(SRC:.tex=.pdf)
 HTML		:= $(SRC:.tex=.html)
+MD		:= en_US/index.md fr_FR/index.md
 
 .PRECIOUS: $(HTML:.html=/index.html)
 
 .PHONY: all
-all: $(PDF)
+all: $(PDF) $(MD)
 
 $(PDF) $(HTML) french-quebec.pdf english-quebec.pdf:
 
@@ -60,9 +61,20 @@ git:
 	install -d $(@D)/
 	cd $(@D)/ && $(HTMLLATEX) ../$< && ln -sf $*.html $(@F)
 
+
+en_US fr_FR:
+	mkdir $@
+
+en_US/index.md: english.tex | en_US
+fr_FR/index.md: french.tex | fr_FR
+
+%.md:
+	sed -nf moderncv2md.sed $< | \
+	sed -e "1i[Back](..)\n\n---" >$@
+
 .PHONY: clean
 clean:
-	rm -f *.pdf *.html *-quebec.tex
+	rm -f *.pdf *.html *-quebec.tex $(MD)
 
 .PHONY: mrproper
 mrproper: clean

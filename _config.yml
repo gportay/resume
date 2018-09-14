@@ -1,2 +1,4 @@
 logo: /profile.png
 theme: jekyll-theme-minimal
+plugins:
+  - jemoji
