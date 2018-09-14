@@ -2,7 +2,7 @@ See my resume in [:us:](en_US/) or in [:fr:](fr_FR/), or download them in [:us:]
 
 ---
 
-# How compile my LaTeX resume
+# How compile my resume
 
 First you will need to install *LaTeX*, *pdflatex*, *epstopdf* and *Mordern CV* onto you system. Follow instructions from [prerequisite](#prerequisite) or go directly to the [compile](#compile) section.
 
