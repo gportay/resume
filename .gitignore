@@ -124,3 +124,9 @@ sympy-plots-for-*.tex/
 # WinEdt
 *.bak
 *.sav
+
+# Jekyll
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
