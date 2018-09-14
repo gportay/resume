@@ -24,7 +24,6 @@
 	s,\\textbf{\([a-zA-Z0-9_\ .@-]*\)},**\1**,g
 	s,\\textit{\([a-zA-Z0-9_\ .@-]*\)},_\1_,g
 	s,\\textmu,u,g
-	s,\\newline{},,g
 	s,\\newline,,g
 
 	/^\\section{.*}/,/^$/ {
