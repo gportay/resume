@@ -20,9 +20,9 @@
 #
 
 /^\\begin{document}$/,/^\\end{document}$/ {
-	s,\\href{\([a-zA-Z0-9_.@:/&?=-]*\)}{\([a-zA-Z0-9_\ .@-]*\)},\2.,g
-	s,\\textbf{\([a-zA-Z0-9_\ .@-]*\)},\1,g
-	s,\\textit{\([a-zA-Z0-9_\ .@-]*\)},\1,g
+	s,\\href{\([a-zA-Z0-9_.@:/&?=-]*\)}{\([a-zA-Z0-9_\ .()@-]*\)},\2.,g
+	s,\\textbf{\([a-zA-Z0-9_\ .()@-]*\)},\1,g
+	s,\\textit{\([a-zA-Z0-9_\ .()@-]*\)},\1,g
 	s,\\textmu,u,g
 	s,\\newline{},,g
 	s,\\newline,,g

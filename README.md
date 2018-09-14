@@ -1,7 +1,5 @@
 Information about myself follows; my [experiences](#vocational), my [contributions](#contributions), my resume in [english](pdf/english.pdf) and [french](pdf/french.pdf) and my portfolio in [french](pdf/portfolio-french.pdf).
 
-_Note_ Information is *somehow* outdated. I am a *Consultant* in *Open-Source Software* at [@savoirfairelinux](https://github.com/savoirfairelinux) with skills in *C*, *Makefile* and *shell*. See [Open Hub](https://www.openhub.net/accounts/gportay) and [Buildroot](https://github.com/buildroot/buildroot/commits?author=gazoo74) for the latest contributions I made.
-
 # How compile my LaTeX resume
 
 First you will need to install *LaTeX*, *pdflatex*, *epstopdf* and *Mordern CV* onto you system. Follow instructions from [prerequisite](#prerequisite) or go directly to the [compile](#compile) section.
@@ -95,6 +93,14 @@ Build the pdf using [docker-run(1)] and [make(1)].
 
 ### [Vocational](#=vocational)
 
+* *March 2016 - Today* **Free Software Consultant** *Savoir-Faire Linux*
+
+> Savoir-Faire Linux is a company of consultants specialized in _Free-Software_. I am part of the Industrial Solution Team who is in charge of developing the _Linux Embedded Systems_ that are embedded in the devices of our customers.
+> *  I implemented a framework in C++ 11 to exchange data between different devices. I used _ZeroMQ_ as the bus for communications and _Protobuf_ as the format for data exchange. I developed a system of plug-in based on _ld_. The code is covered using _gcov_.
+> *  I bumped the embedded software of an _IoT_ device to the latest version of _Yocto_. I moved the init system to _systemd_. I fixed low-level and system related issues.
+> *  I customized the interface written in _LuCI_ of a network device based on _OpenWrt_. I compiled and setup the docker daemon to run _Docker_ images on that device.
+> *  I mainlined the package _QtWebEngine_, the board _Raspberry Pi 3 (64-bits)_, and fixed build issues in _Buildroot_.
+
 * *July 2010 - September 2015* **Embedded Linux Engineer** *Overkiz SAS, Somfy group*
 
 > Overkiz is specialized in _Cloud Computing_ for _Home-Automation_. It develops a solution which connects objects from Home to _Internet_ (_IoT_). It consists of a gateway that links home-automation devices to its servers. We can control objects from Home thanks to a smart-phone and Web-Services. I was part of the Embedded Team who develops Embedded Linux System of gateways.
@@ -106,6 +112,10 @@ Build the pdf using [docker-run(1)] and [make(1)].
 > *  I also contributed to Open-Source projects (see Open-Source Contributions section).
 
 ### [Contributions](#=contributions)
+
+* **[Buildroot](https://github.com/buildroot/buildroot/commits?author=gazoo74)** I fixed build issues and added package QtWebEngine and config Raspberry Pi 3 (64-bits).
+
+* **[Lighttpd](https://github.com/lighttpd/lighttpd1.4/commits?author=gazoo74)** I mainlined CRLs for client certificate verification and make client verification errors ignored is not enforced. I fixed two build issues.
 
 * **[Linux Kernel](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/log/?qt=grep&q=PORTAY)** I added two Atmel SoC based device-trees.
 
@@ -120,3 +130,5 @@ Build the pdf using [docker-run(1)] and [make(1)].
 ## References
 
 * *Overkiz, SAS.* Florent PELLARIN, Chief Operational Officer (*[f.pellarin@overkiz.com](mailto:f.pellarin@overkiz.com)*)
+
+* *Savoir-Faire Linux Inc.* Jérôme OUFELLA, Vice President Technologies (*[jerome.oufella@savoirfairelinux.com](mailto:jerome.oufella@savoirfairelinux.com)*)

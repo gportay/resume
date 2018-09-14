@@ -37,7 +37,15 @@
 
 \section{Expériences}
 \subsection{Professionnelles}
-\cventry{Juillet 2010--Septembre 2015}{Ingénieur Linux Embarqué}{Overkiz SAS, groupe Somfy}{Archamps}{}{Overkiz est une entreprise spécialisée dans le «~\textit{Cloud Computing}~» pour la domotique. Elle propose une solution qui connecte les objets de la maison à \textit{Internet} (\textit{IoT}). Elle se compose d'une passerelle qui fait le lien entre les périphériques domotiques et ses serveurs. Il est possible de piloter ses objets de la maison grâce à son smart-phone et des Web-Services. J'ai fait partie de l'équipe qui développe le système Linux embarqué par la passerelle.\newline
+\cventry{Mars 2016--Aujourd'hui}{Consultant en Logiciel Libres}{Savoir-faire Linux}{Montréal}{}{Savoir-faire Linux est une entreprise de consultants spécialisés dans le \textit{Logiciel Libre}. Je fais parti de l'équipe Solution Industrielle qui est en charge de développer les \textit{Systèmes Embarqués Linux} qui équipent les objets connectés de nos clients.
+\begin{itemize}
+\item J'ai développé un framework en C++ 11 d'échange de données entre différents objets connectés. J'ai utilisé \textit{ZeroMQ} comme bus de communication et \textit{Protobuf} comme format pour les données échangées. J'ai développé un système de plug-in basé sur \textit{ld}. Le code est couvert en utilisant \textit{gcov}.
+\item J'ai mis à jour le logiciel embarqué d'un objet connecté vers la dernière version de \textit{Yocto}. J'ai migré le système d'init vers systemd. J'ai résolu les problèmes bas niveau et système.
+\item J'ai personnalisé l'interface développée en \textit{LuCI} d'un périphérique réseau basé sur \textit{OpenWRT}. J'ai compilé et configuré le démon docker pour faire fonctionner des images \textit{Docker} sur ce périphérique.
+\item J'ai créé le paquet \textit{QtWebEngine}, la carte électronique \textit{Raspberrypi 3 (64-bits)} et résolu des problèmes de compilation dans \textit{Buildroot}.
+\end{itemize}
+}
+\cventry{Juillet 2010--Septembre 2015}{Ingénieur Linux Embarqué}{Overkiz SAS, groupe Somfy}{Archamps}{}{Overkiz est une entreprise spécialisée dans le «~\textit{Cloud Computing}~» pour la domotique. Elle propose une solution qui connecte les objets de la maison à \textit{Internet} (\textit{IoT}). Elle se compose d'une passerelle qui fait le lien entre les périphériques domotiques et ses serveurs. Il est possible de piloter ses objets de la maison grâce à son smart-phone et des Web-Services. J'ai fait partie de l'équipe qui développe le système Linux embarqué par la passerelle.
 \begin{itemize}
 \item J'étais coresponsable de la distribution Linux embarquée. J’intégrais des outils issus de la communauté du logiciel libre.
 \item J'étais responsable du déploiement des mises à jour du logiciel embarqué.
@@ -47,12 +55,15 @@
 \item J'ai contribué sur des projets Libres (voir la section Contributions Open-Source).
 \end{itemize}
 }
+\newpage
 \subsection{Stages}
 \cventry{2009}{Stage de Master}{LC Mobility}{Australie}{}{LC Mobility est une entreprise spécialisée dans l’accueil de doctorants étrangers. J’ai effectué une étude de marché sur la mobilité des étudiants australiens, en Australie.}
 \cventry{2008}{Stage Ingénieur de 3e année}{Freescale Semiconductors}{Toulouse}{}{J'ai été responsable du développement du pilote de charge de batterie de la plateforme de téléphonie mobile de Freescale (ARM-11). Ce téléphone mobile est alimenté par une batterie Li-ion. Il fonctionne sous Nokia S60 (Symbian OS). J'ai développé le pilote en C++ en utilisant les mécanismes propres à Symbian.}
 \cventry{2007}{Stage Ingénieur de 2e année}{Sagem Monetel}{Valence}{}{J’ai été chargé d’optimiser l’emprunte mémoire (dynamique et statique) d'une application C embarquée dans un terminal de paiement bancaire. J’ai utilisé les fichiers listing et mapping générés par le compilateur libre GNU/GCC pour localiser les parties de code utilisant le plus de ressources mémoires. J’ai réduit la taille de l’application de plus de 30 \%.}
 \cventry{2004}{Stage Technicien de 2e année de DUT}{Sagem Monetel}{Valence}{}{J’ai eut la charge de porter une application C embarquée vers le compilateur libre GNU/GCC. J’ai également développé un outil de test de performance afin de démontrer la puissance du terminal de paiement durant une transaction bancaire.}
 \subsection{Contributions Open-Source}
+\cvitem{\href{https://github.com/buildroot/buildroot/commits?author=gazoo74}{Buildroot}}{J'ai résolu des problèmes de compilation et ajouté le paquet QtWebEngine et la configuration Raspberry Pi 3 (64-bits).}
+\cvitem{\href{https://github.com/lighttpd/lighttpd1.4/commits?author=gazoo74}{Lighttpd}}{J'ai ajouté le support des CRLs pour la vérification du certificat client et ignoré les erreurs de vérification du certificat client si l'option n'est pas forcée. J'ai résolu deux problèmes de compilation.}
 \cvitem{\href{https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/log/?qt=grep&q=PORTAY}{Noyau Linux}}{J'ai ajouté deux nouvelles plateformes basées sur des SoC d'Atmel (device-tree).}
 \cvitem{\href{https://github.com/linux4sam/at91bootstrap/commits?author=gazoo74}{Atmel at91bootstrap}}{J'ai ajouté le support d'UBI. Le but est d'améliorer les mises à jour critiques vis-à-vis d'éventuelles coupures de courant. Les volumes critiques, tels que les noyaux ou les bootloaders, sont dupliqués et stockés dans des volumes UBI statiques. Le bootstrap vérifie simplement l'intégrité du volume en utilisant le bit de mise à jour présent dans l'en-tête UBI.}
 \cvitem{\href{https://github.com/bagder/curl/commits?author=gazoo74}{CURL}}{J'ai mis à jour libcurl afin qu'il soit compatible avec la dernière version des API de la librairie PolarSSL. J'ai également corrigé un bogue avec le mécanisme de polling qui entraînait un timeout lors de la négociation SSL avec le serveur distant.}
@@ -83,6 +94,7 @@
 \cvitem{Outils informatiques}{Microsoft Office, Eclipse, Xcode, \LaTeX}
 \cvitem{Langages de programmation}{Scripts Shell/Bash, Python, C/C++, STL, Assembleurs (68k, MIPS), Java, VHDL}
 \cvitem{Autres}{Linux Kernel, Git, Autotools, Cross-compilation, Yocto}
+\newpage
 
 \section{Centres d'intérêts}
 \cvitem{BDE/BDS Polytech'Grenoble}{Membre du bureau des étudiants de Polytech’Grenoble.\newline Organisation du week-end d'intégration en 2006 (350 étudiants, 3 jours).\newline Organisation de deux week-end ski en 2006 et 2007 (400 étudiants, 3 jours, 11 écoles d'ingénieurs du réseau Polytech).}
@@ -92,5 +104,6 @@
 
 \section{Références}
 \cvitem{Overkiz, SAS.}{Florent PELLARIN, Directeur des Opérations (\href{mailto:f.pellarin@overkiz.com}{f.pellarin@overkiz.com})}
+\cvitem{Savoir-Faire Linux Inc.}{Jérôme OUFELLA, Vice Président Technologie (\href{mailto:jerome.oufella@savoirfairelinux.com}{jerome.oufella@savoirfairelinux.com})}
 
 \end{document}
