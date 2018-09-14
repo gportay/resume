@@ -26,6 +26,7 @@
 	s,\\textmu,u,g
 	s,\\newline,,g
 	s,\\%,%,g
+	s,~,,g
 
 	/^\\section{.*}/,/^$/ {
 		s,\\section{\(.*\)},\n## \1,p
