@@ -2,7 +2,7 @@
 
 ---
 
-# Ingénieur Linux Embarqué
+# Consultant en Logiciel Libres
 
 ## Expériences
 
