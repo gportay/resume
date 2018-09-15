@@ -46,11 +46,11 @@
 
 ### Open-Source Contributions
 
-**[Buildroot](https://github.com/buildroot/buildroot/commits?author=gazoo74)** I fixed build issues and added package QtWebEngine and config Raspberry Pi 3 (64-bits).
+**[Buildroot](https://github.com/buildroot/buildroot/commits?author=gazoo74)** I added package QtWebEngine and config Raspberry Pi 3 (64-bits).
 
 **[genimage](https://github.com/pengutronix/genimage/commits?author=gazoo74)** I added a hdimage property to set the position of the extended partition recorded into the Master Boot Record.
 
-**[Lighttpd](https://github.com/lighttpd/lighttpd1.4/commits?author=gazoo74)** I mainlined CRLs for client certificate verification and make client verification errors ignored is not enforced. I fixed two build issues.
+**[Lighttpd](https://github.com/lighttpd/lighttpd1.4/commits?author=gazoo74)** I mainlined CRLs for client certificate verification and make client verification errors ignored is not enforced.
 
 **[jack2](https://github.com/jackaudio/jack2/commits?author=gazoo74)** I fixed uninitialized members that cause invalid reads when run by valgrind.
 
