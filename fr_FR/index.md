@@ -156,7 +156,7 @@
 
 *Outils informatiques* Microsoft Office, Eclipse, Xcode, \LaTeX
 
-*Langages de programmation* Scripts Shell/Bash, Python, C/C++, STL, Assembleurs (68k, MIPS), Java, VHDL
+*Langages de programmation* Scripts Shell/Bash, Python, C/C++ (11, STL), Assembleurs (68k, MIPS), Java, VHDL
 
 *Autres* Linux Kernel, Git, Autotools, Cross-compilation, Yocto
 
