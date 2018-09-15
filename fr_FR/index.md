@@ -48,7 +48,11 @@
 
 **[Buildroot](https://github.com/buildroot/buildroot/commits?author=gazoo74)** J'ai résolu des problèmes de compilation et ajouté le paquet QtWebEngine et la configuration Raspberry Pi 3 (64-bits).
 
+**[genimage](https://github.com/pengutronix/genimage/commits?author=gazoo74)** J'ai ajouté une propriété à hdimage pour configurer la position de la partition étendue enregistrée dans le Master Boot Record.
+
 **[Lighttpd](https://github.com/lighttpd/lighttpd1.4/commits?author=gazoo74)** J'ai ajouté le support des CRLs pour la vérification du certificat client et ignoré les erreurs de vérification du certificat client si l'option n'est pas forcée. J'ai résolu deux problèmes de compilation.
+
+**[jack2](https://github.com/jackaudio/jack2/commits?author=gazoo74)** J'ai initialisé des variables membres non initialisées qui entraînaient des lectures invalides lorsqu'il était exécuté sous valgrind.
 
 **[Noyau Linux](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/log/?qt=grep&q=PORTAY)** J'ai ajouté deux nouvelles plateformes basées sur des SoC d'Atmel (device-tree).
 
