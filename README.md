@@ -97,9 +97,9 @@ Build the pdf using [docker-run(1)] and [make(1)].
 
 > blkpg-part creates, resizes and deletes partitions on the fly without writing back the changes to the partition table. Thanks to blkpg-part, it is possible to export any consecutive blocks, that are not already part of a partition, as a temporary partitioned block device. A typically use case in embedded systems is to export hidden blobs that are stored in raw in block devices (i.e. blobs that are not stored into a file-system).
 
-*2018* ***[kmake](https://gazoo74.github.io/kmake/)*** *Maintain kernel dependencies by extending Kbuild features*
+*2018* ***[kmake](https://gazoo74.github.io/kmake/)*** *Maintain kernel dependencies by extending Kbuild*
 
-> kmake runs on top of make using a set of Makefiles to extend the Kbuild’s features. It enhances the kernel build-system with the build of a tiny rootfs and an additional Qemu target to emulate the linux kernel alongside a userland. The userland is a tiny InitRAMFS cpio archive based on a static build of busybox. It contains many common UNIX utilities into a single small executable.
+> kmake runs on top of make using a set of Makefiles to extend the Kbuild’s features. It enhances the kernel build-system with the build of a tiny rootfs and an additional Qemu target to emulate the linux kernel alongside a userland. The userland is a tiny InitRAMFS cpio archive based on a static build of busybox.
 
 *2017-2018* ***[dosh](https://gazoo74.github.io/dosh/)*** *Run a user shell in a container with pwd bind mounted*
 
