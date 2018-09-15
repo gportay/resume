@@ -17,7 +17,7 @@
 
 *Juillet 2010 - Septembre 2015* **Ingénieur Linux Embarqué** *Overkiz SAS, groupe Somfy*
 
-> Overkiz est une entreprise spécialisée dans le «_Cloud Computing_» pour la domotique. Elle propose une solution qui connecte les objets de la maison à _Internet_ (_IoT_). Elle se compose d'une passerelle qui fait le lien entre les périphériques domotiques et ses serveurs. Il est possible de piloter ses objets de la maison grâce à son smart-phone et des Web-Services. J'ai fait partie de l'équipe qui développe le système Linux embarqué par la passerelle.
+> Overkiz est une entreprise spécialisée dans le «_Cloud Computing_» pour la domotique. Elle propose une solution qui connecte les objets de la maison à _Internet_ (_IoT_). Elle se compose d'une passerelle qui fait le lien entre les périphériques domotiques et ses serveurs. Il est possible de piloter ses objets de la maison grâce à son smart-phone et des Web-Services. J'ai fait partie de l'équipe qui développe le système Linux embarqué de la passerelle.
 > *  J'étais coresponsable de la distribution Linux embarquée. J’intégrais des outils issus de la communauté du logiciel libre.
 > *  J'étais responsable du déploiement des mises à jour du logiciel embarqué.
 > *  J’ai mis en place le système de «Build automatisé» Yocto. Cet outil construit l’intégralité du système embarqué de la passerelle. Yocto permet de gagner de nombreuses heures à l’équipe tout en minimisant les erreurs liées à des interventions humaines lors de la construction de nouvelles versions.

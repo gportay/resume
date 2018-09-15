@@ -17,7 +17,7 @@
 
 *July 2010 - September 2015* **Embedded Linux Engineer** *Overkiz SAS, Somfy group*
 
-> Overkiz is specialized in _Cloud Computing_ for _Home-Automation_. It develops a solution which connects objects from Home to _Internet_ (_IoT_). It consists of a gateway that links home-automation devices to its servers. We can control objects from Home thanks to a smart-phone and Web-Services. I was part of the Embedded Team who develops Embedded Linux System of gateways.
+> Overkiz is specialized in _Cloud Computing_ for _Home-Automation_. It develops a solution which connects objects from Home to _Internet_ (_IoT_). It consists of a gateway that links home-automation devices to its servers. We can control objects from Home thanks to a smart-phone and Web-Services. I was part of the Embedded Team who is developing the Embedded Linux System of gateways.
 > *  I was co-maintainer of our home-made Embedded Linux distribution. I did the integration of software from the Open-Source community.
 > *  I was also responsible for the deployment of the embedded software updates.
 > *  I set up the Yocto Build System that builds the embedded software. It builds from scratch the whole embedded software. Yocto allows to save hours to the embedded developers and minimizes errors when releases are built introduced by human operations.
