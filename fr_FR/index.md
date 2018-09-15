@@ -14,7 +14,6 @@
 > *  J'ai développé un framework en C++ 11 d'échange de données entre différents objets connectés. J'ai utilisé _ZeroMQ_ comme bus de communication et _Protobuf_ comme format pour les données échangées. J'ai développé un système de plug-in basé sur _ld_. Le code est couvert en utilisant _gcov_.
 > *  J'ai mis à jour le logiciel embarqué d'un objet connecté vers la dernière version de _Yocto_. J'ai migré le système d'init vers systemd. J'ai résolu les problèmes bas niveau et système.
 > *  J'ai personnalisé l'interface développée en _LuCI_ d'un périphérique réseau basé sur _OpenWRT_. J'ai compilé et configuré le démon docker pour faire fonctionner des images _Docker_ sur ce périphérique.
-> *  J'ai créé le paquet _QtWebEngine_, la carte électronique _Raspberrypi 3 (64-bits)_ et résolu des problèmes de compilation dans _Buildroot_.
 
 *Juillet 2010 - Septembre 2015* **Ingénieur Linux Embarqué** *Overkiz SAS, groupe Somfy*
 
@@ -24,7 +23,6 @@
 > *  J’ai mis en place le système de «Build automatisé» Yocto. Cet outil construit l’intégralité du système embarqué de la passerelle. Yocto permet de gagner de nombreuses heures à l’équipe tout en minimisant les erreurs liées à des interventions humaines lors de la construction de nouvelles versions.
 > *  J'ai développé des frameworks internes et des applications ajoutant la prise en charge de nouveaux protocoles domotiques. J’ai été en charge du développement de l’application responsable du maintien de la connexion entre la passerelle et le serveur. Les frameworks et les applications sont développés en C++.
 > *  J'ai développé des modules noyaux et ajouté le support de deux nouvelles cartes électroniques développées par notre équipe dans le noyau Linux.
-> *  J'ai contribué sur des projets Libres (voir la section Contributions Open-Source).
 
 ### Stages
 

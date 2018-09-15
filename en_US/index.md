@@ -14,7 +14,6 @@
 > *  I implemented a framework in C++ 11 to exchange data between different devices. I used _ZeroMQ_ as the bus for communications and _Protobuf_ as the format for data exchange. I developed a system of plug-in based on _ld_. The code is covered using _gcov_.
 > *  I bumped the embedded software of an _IoT_ device to the latest version of _Yocto_. I moved the init system to _systemd_. I fixed low-level and system related issues.
 > *  I customized the interface written in _LuCI_ of a network device based on _OpenWrt_. I compiled and setup the docker daemon to run _Docker_ images on that device.
-> *  I mainlined the package _QtWebEngine_, the board _Raspberry Pi 3 (64-bits)_, and fixed build issues in _Buildroot_.
 
 *July 2010 - September 2015* **Embedded Linux Engineer** *Overkiz SAS, Somfy group*
 
@@ -24,7 +23,6 @@
 > *  I set up the Yocto Build System that builds the embedded software. It builds from scratch the whole embedded software. Yocto allows to save hours to the embedded developers and minimizes errors when releases are built introduced by human operations.
 > *  I developed home-made frameworks and applications to support new home-automation protocols into our gateways. I was also in charge of developing the application that creates the connection between the box and the server. Frameworks and applications are both developed in C++.
 > *  I developed kernel modules and I did two boards bring-up and mainlined them inside into Linux kernel sources.
-> *  I also contributed to Open-Source projects (see Open-Source Contributions section).
 
 ### Training Periods
 
