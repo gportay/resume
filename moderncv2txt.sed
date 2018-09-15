@@ -40,7 +40,7 @@
 		/^\\cventry{/,/^}$/ {
 			/\\begin{itemize}/d
 			/\\end{itemize}/d
-			/\\item/s,\\item,,p
+			/\\item/s,\\item, -,p
 			s,--, - ,
 			/^\\cventry{/s,}$,,
 			s,\\cventry{\(.*\)}{\(.*\)}{\(.*\)}{\(.*\)}{\(.*\)}{\(.*\),\n\1 \2 \3\n\6,p
