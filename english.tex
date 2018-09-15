@@ -82,7 +82,15 @@
 \cventry{2002--2004}{DUT ISI}{IUT of Valence}{Valence}{\textit{2-year Academic and Technical degree}}{in Industrial Computing.}
 \cventry{2001--2002}{DEUG SV}{University of Savoy}{Chambéry}{\textit{2-year University}}{1st-year of a 2-year University degree in Biology.}
 
-\section{School projects}
+\section{Projects}
+\subsection{Personal}
+\cventry{2018}{\href{https://gazoo74.github.io/blkpg-part/}{blkpg-part}}{Partition table and disk geometry handling utility}{C}{GPLv2}{blkpg-part creates, resizes and deletes partitions on the fly without writing back the changes to the partition table. Thanks to blkpg-part, it is possible to export any consecutive blocks, that are not already part of a partition, as a temporary partitioned block device. A typically use case in embedded systems is to export hidden blobs that are stored in raw in block devices (i.e. blobs that are not stored into a file-system).}
+\cventry{2018}{\href{https://gazoo74.github.io/kmake/}{kmake}}{Maintain kernel dependencies by extending Kbuild}{Makefile}{GPLv3}{kmake runs on top of make using a set of Makefiles to extend the Kbuild’s features. It enhances the kernel build-system with the build of a tiny rootfs and an additional Qemu target to emulate the linux kernel alongside a userland. The userland is a tiny InitRAMFS cpio archive based on a static build of busybox.}
+\cventry{2017-2018}{\href{https://gazoo74.github.io/dosh/}{dosh}}{Run a user shell in a container with pwd bind mounted}{Bash, Docker}{MIT}{dosh is a shell-like frontend written in \textit{bash} for \textit{docker-run}. It runs commands in a container; using the current user, with pwd bind mounted.}
+\cventry{2017-2018}{\href{https://gazoo74.github.io/tini/}{tini}}{Simple init daemon that spawns processes and reaps zombies}{LGPLv2.1}{}{tini is a damn small process spawner and zombie reaper.}
+\cventry{2015-2017}{\href{https://gazoo74.github.io/mpkg}{mpkg}}{Managing packages from a shell script}{Shell}{MIT}{mPKG is a lightweight package manager written in pure Shell. It uses standard utilities such as sh, grep, tar, wget and awk that are shipped in any POSIX system. This makes mPKG suitable for embedded devices that usually embed Busybox which provides everything it needs in a single binary.}
+\cventry{2015-2018}{\href{https://gazoo74.github.io/templates/}{templates}}{Some templates source files}{C/C++, Shell, Makefile}{MIT, BSD, GPL}{Those examples of code are mostly written in C/C++, Shell/Bash, and make/Makefile. Those languages are the foundations of low-level and system development.}
+\subsection{School}
 \cventry{2009}{LHOG Minatec}{900MHz amplifier}{Grenoble}{}{Conception of a GSM-900 amplifier at LHOG Minatec (micro-nano technology laboratory). Design, simulation, layout, assembly, tests, and characterization.}
 \cventry{2008}{LHOG Minatec}{CMOS 6 bits accuracy ADC}{Grenoble}{}{Conception of a 6-bits Analog-to-Digital Converter in AMS CMOS 0,35\textmu m technology at CIME Minatec (micro-nano  technology laboratory). CMOS comparators had been designed using Cadense, and the Corrector and the Decoder developed in VHDL.}
 \cventry{2006}{Polytech'Grenoble}{ASM HC12 assembler}{Grenoble}{}{Conception of an assembler for the 68HC12 instruction set. This command line tool was developed in C on Linux.}

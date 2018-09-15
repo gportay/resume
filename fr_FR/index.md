@@ -94,6 +94,34 @@
 
 ## Projets
 
+### Personnels
+
+*2018* ***[blkpg-part](https://gazoo74.github.io/blkpg-part/)*** *Utilitaire de table de partition et géométrie du disque*
+
+> blkpg-part créait, redimensionne et supprime des partitions à la volée sans enregistrer les changements dans la table de partition. Grâce à blkpg-part, il est possible d'exporter des bloc consécutives, qui ne font pas partie d'une partition, comme un périphérique temporaire. Un cas typique d'utilisation dans les systèmes embarqués est d'exporter les binaires qui sont stockés dans des périphériques de type bloc (i.e. des binaires qui ne sont pas enregistrés dans un système de fichier).
+
+*2018* ***[kmake](https://gazoo74.github.io/kmake/)*** *Extention de Kbuild*
+
+> kmake fonctionne au-dessus de make en utilisant des Makefiles pour étendre les fonctionnalités de Kbuild. Il complète le système de construction du noyau avec la construction d'un rootfs minimal et d'une règle Qemu supplémentaire pour émuler le noyau linux au coté d'un espace utilisateur. L'espace utilisateur est une petite archive cpio en InitRAMFS basée sur une compilation statique de busybox.
+
+*2017-2018* ***[dosh](https://gazoo74.github.io/dosh/)*** *Execute un shell utilisateur dans un conteneur*
+
+> dosh est une interface à la shell écrit in Bash pour docker-run. Il exécute les commandes dans un conteneur ; utilisant les droits utilisateurs, avec le répertoire courant monté.
+
+*2017-2018* ***[tini](https://gazoo74.github.io/tini/)*** *Simple démon d'initialiation*
+
+> tini est un petit démon d'initialisation qui démarre des processus et s'occupe des processus zombies.
+
+*2015-2017* ***[mpkg](https://gazoo74.github.io/mpkg)*** *Gestion des paquets depuis un script shell*
+
+> mPKG est un gestionnaire de paquet léger et écrit en pure Shell. Il utilise des utilitaires comme sh, grep, tar, wget et awk fournit par tout système POSIX. mPKG est adapté aux systèmes embarqués utilisant Busybox.
+
+*2015-2018* ***[templates](https://gazoo74.github.io/templates/)*** *Quelques exemples de code.*
+
+> Ces exemples de code sont principalement écrit en C/C++, Shell/Bash and make/Makefile. Ces langages sont les fondations du développement bas niveau et système.
+
+### Universitaires
+
 *2009* **LHOG Minatec** *Amplificateur 900MHz*
 
 > Conception d'un amplificateur GSM-900 au LHOG Minatec (laboratoire de micro nano technologie). Conception, simulation, routage, assemblage, tests et caractérisation.
