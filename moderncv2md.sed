@@ -31,7 +31,7 @@
 	s,\\linebreak\[[0-5]\], ,g
 	s,\\linebreak, ,g
 	s,\\%,%,g
-	s,~,,g
+	s,~, ,g
 
 	/^\\section{.*}/,/^$/ {
 		s,\\section{\(.*\)},\n## \1,p
