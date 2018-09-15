@@ -152,9 +152,7 @@
 
 ## Computer skills
 
-*Computer literacy* Microsoft Office, Eclipse, Xcode, \LaTeX
-
-*Programming languages* Shell/Bash scripting, Python, C/C++ (11, STL), Assemblers (68k, MIPS), Java, VHDL
+*Programming languages* Shell/Bash scripting, Python, C/C++ (11, STL), Assemblers (68k, MIPS), Java, VHDL, \LaTeX
 
 *Others* Linux Kernel, Git, Autotools, Cross-compilation, Yocto
 
