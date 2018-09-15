@@ -164,7 +164,7 @@
 
 *BDE/BDS Polytech'Grenoble* Member of Student Association at Polytech’Grenoble. Organization of the Integration event in 2006 (350 students, 3 days). Organization of two Ski event in 2006 and 2007 (400 students, 3 days, 11 engineering school from France).
 
-*Mountain* Ski and hiking.
+*Mountain* Ski, hiking, snowshoes hiking.
 
 *Table tennis* Player, referee, and coach (9-year practicing).
 

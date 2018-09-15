@@ -164,7 +164,7 @@
 
 *BDE/BDS Polytech'Grenoble* Membre du bureau des étudiants de Polytech’Grenoble. Organisation du week-end d'intégration en 2006 (350 étudiants, 3 jours). Organisation de deux week-end ski en 2006 et 2007 (400 étudiants, 3 jours, 11 écoles d'ingénieurs du réseau Polytech).
 
-*Montagne* Ski et randonnées.
+*Montagne* Ski, raquettes et randonnées.
 
 *Tennis de table* Joueur, arbitre et entraineur (9 ans).
 
