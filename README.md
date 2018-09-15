@@ -1,4 +1,4 @@
-See my résumé in [:us:](en_US/) or in [:fr:](fr_FR/), or download them in [:us:](pdf/english.pdf) or in [:fr:](pdf/french.pdf). You may also download the [lite version ](pdf/french-short.pdf) or my [portfolio](pdf/portfolio-french.pdf), both in french.
+See my résumé in [:us:](en_US/) or in [:fr:](fr_FR/), or download them in [:us:](pdf/english.pdf) or in [:fr:](pdf/french.pdf). You may also download the [lite version](pdf/french-short.pdf) or my [portfolio](pdf/portfolio-french.pdf), both in french.
 
 Information about my [contributions](#contributions) and my [projects](#projects) follows. My personal projects serve as showcases to express and develop my skills (mostly in _C_, _Shell_ and _Makefile_). The list of my contributions shows how I embraced and how far I am involved in _Free Software_.
 
