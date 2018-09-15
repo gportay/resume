@@ -106,7 +106,7 @@
 
 > dosh est une interface à la shell écrit in Bash pour docker-run. Il exécute les commandes dans un conteneur ; utilisant les droits utilisateurs, avec le répertoire courant monté.
 
-*2017-2018* ***[tini](https://gazoo74.github.io/tini/)*** *Simple démon d'initialiation*
+*2017-2018* ***[tini](https://gazoo74.github.io/tini/)*** *Simple démon d'initialisation*
 
 > tini est un petit démon d'initialisation qui démarre des processus et s'occupe des processus zombies.
 
