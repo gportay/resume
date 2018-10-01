@@ -4,7 +4,7 @@ Information about my [contributions](#contributions) and my [projects](#projects
 
 ---
 
-# How compile my résumé
+# How to compile my résumé
 
 First you will need to install *LaTeX*, *pdflatex*, *epstopdf* and *Mordern CV* onto you system. Follow instructions from [prerequisite](#prerequisite) or go directly to the [compile](#compile) section.
 
