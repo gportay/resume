@@ -98,7 +98,7 @@ Ces deux nouvelles cartes électroniques sont intégrées à la dernière versio
 
 \part{Projets Personnels}
 
-\section{\href{https://github.com/gazoo74/initramfs/}{InitRAMFS}}
+\section{\href{https://github.com/gportay/initramfs/}{InitRAMFS}}
 
 \underline{Mots clés} : \textit{Busybox}, \textit{OverlayFS}, \textit{GNU/Makefile}, \textit{Kconfig}, \textit{crosstool-NG}, \textit{QEMU}.\\
 
@@ -115,11 +115,11 @@ Le c\oe{}ur du projet est architecturé autour de l'exécutable \textit{Busybox}
 
 Le but étant de solliciter un maximum d'\textit{applet Busybox}.\\
 
-\textit{InitRAMFS} gère de manière dynamique le montage des périphériques de stockage de masse (comme une \textit{clé USB}) dans le point de montage \textbf{/media/<nom-ou-id-du-périphérique>} grâce aux \textit{applets} \href{http://www.busybox.net/downloads/BusyBox.html#mdev}{mdev} et \href{http://www.busybox.net/downloads/BusyBox.html#blkid}{blkid} et d'un \textit{script Shell} \href{https://github.com/gazoo74/initramfs/blob/old-fixes-and-dev-need-study/packages-initramfs/mdev/usr/sbin/automount}{automount}.\\
+\textit{InitRAMFS} gère de manière dynamique le montage des périphériques de stockage de masse (comme une \textit{clé USB}) dans le point de montage \textbf{/media/<nom-ou-id-du-périphérique>} grâce aux \textit{applets} \href{http://www.busybox.net/downloads/BusyBox.html#mdev}{mdev} et \href{http://www.busybox.net/downloads/BusyBox.html#blkid}{blkid} et d'un \textit{script Shell} \href{https://github.com/gportay/initramfs/blob/old-fixes-and-dev-need-study/packages-initramfs/mdev/usr/sbin/automount}{automount}.\\
 
 \textit{InitRAMFS} configure (et dé-configure) également dynamiquement les interfaces réseaux au branchement (et débranchement) des câbles via l'applet \href{http://www.busybox.net/downloads/BusyBox.html#ifplugd}{ifplugd}. L'interface réseau obtient alors soit une adresse \textit{IP} attribuée par le serveur \textit{DHCP} via l'applet \href{http://www.busybox.net/downloads/BusyBox.html#udhcpc}{udhcpc}, soit une adresse \textit{IP} en \textit{Link-Local} via l'applet \href{http://www.busybox.net/downloads/BusyBox.html#zcip}{zcip} si aucun serveur \textit{DHCP} n'est présent sur le \textit{LAN}.\\
 
-\textit{InitRAMFS} utilise un \href{https://github.com/gazoo74/initramfs/blob/master/packages-initramfs/ramfs/etc/init}{script Shell} en lieu et place du système d'init traditionnel implémenté par l'applet \href{http://www.busybox.net/downloads/BusyBox.html#init}{init}.\\
+\textit{InitRAMFS} utilise un \href{https://github.com/gportay/initramfs/blob/master/packages-initramfs/ramfs/etc/init}{script Shell} en lieu et place du système d'init traditionnel implémenté par l'applet \href{http://www.busybox.net/downloads/BusyBox.html#init}{init}.\\
 
 J'ai ajouté le support d'\href{https://www.kernel.org/doc/Documentation/filesystems/overlayfs.txt}{OverlayFS} afin de palier au problème de la volatilité d'un système de fichier racine en \href{https://fr.wikipedia.org/wiki/Ramfs}{RAMFS}. En effet, tout redémarrage fait perdre toutes traces de modifications.\\
 
@@ -163,7 +163,7 @@ $ make menuconfig
 $ make runqemu
 \end{verbatim}
 
-\section{\href{https://github.com/gazoo74/mpkg/}{MPKG}}
+\section{\href{https://github.com/gportay/mpkg/}{MPKG}}
 
 \underline{Mots clés} : \textit{POSIX}, \textit{script Shell}, \textit{grep}, \textit{sed}, \textit{tar}, \textit{wget}.\\
 
@@ -191,13 +191,13 @@ Voici une liste de mes contributions dans différents projets libres :
 \begin{itemize}
 \item \textbf{Linux} : \url{https://git.kernel.org/cgit/linux/kernel/git/next/linux-next.git/log/?id=refs\%2Ftags\%2Fnext-20150610&qt=grep&q=PORTAY}
 \item \textbf{OPKG} : \url{http://git.yoctoproject.org/cgit/cgit.cgi/opkg/log/?qt=grep&q=PORTAY}
-\item \textbf{cURL} : \url{https://github.com/bagder/curl/commits?author=gazoo74}
+\item \textbf{cURL} : \url{https://github.com/bagder/curl/commits?author=gportay}
 \item \textbf{AT91Bootstrap} :
 \begin{itemize}
-\item \url{https://github.com/linux4sam/at91bootstrap/commits?author=gazoo74}
+\item \url{https://github.com/linux4sam/at91bootstrap/commits?author=gportay}
 \item \url{https://github.com/linux4sam/at91bootstrap/pull/25}
 \end{itemize}
-\item \textbf{Dropbear} : \url{https://github.com/mkj/dropbear/commits?author=gazoo74}
+\item \textbf{Dropbear} : \url{https://github.com/mkj/dropbear/commits?author=gportay}
 \end{itemize}
-Ainsi que lien vers mes dépots hebergés par GitHub : \url{https://www.github.com/gazoo74}.
+Ainsi que lien vers mes dépots hebergés par GitHub : \url{https://www.github.com/gportay}.
 \end{document}

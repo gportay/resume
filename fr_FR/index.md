@@ -44,23 +44,23 @@
 
 ### Contributions Open-Source
 
-**[Buildroot](https://github.com/buildroot/buildroot/commits?author=gazoo74)** J'ai ajouté le paquet QtWebEngine et la configuration Raspberry Pi 3 (64-bits).
+**[Buildroot](https://github.com/buildroot/buildroot/commits?author=gportay)** J'ai ajouté le paquet QtWebEngine et la configuration Raspberry Pi 3 (64-bits).
 
-**[genimage](https://github.com/pengutronix/genimage/commits?author=gazoo74)** J'ai ajouté une propriété à hdimage pour configurer la position de la partition étendue enregistrée dans le Master Boot Record.
+**[genimage](https://github.com/pengutronix/genimage/commits?author=gportay)** J'ai ajouté une propriété à hdimage pour configurer la position de la partition étendue enregistrée dans le Master Boot Record.
 
-**[Lighttpd](https://github.com/lighttpd/lighttpd1.4/commits?author=gazoo74)** J'ai ajouté le support des CRLs pour la vérification du certificat client et ignoré les erreurs de vérification du certificat client si l'option n'est pas forcée.
+**[Lighttpd](https://github.com/lighttpd/lighttpd1.4/commits?author=gportay)** J'ai ajouté le support des CRLs pour la vérification du certificat client et ignoré les erreurs de vérification du certificat client si l'option n'est pas forcée.
 
-**[jack2](https://github.com/jackaudio/jack2/commits?author=gazoo74)** J'ai initialisé des variables membres non initialisées qui entraînaient des lectures invalides lorsqu'il était exécuté sous valgrind.
+**[jack2](https://github.com/jackaudio/jack2/commits?author=gportay)** J'ai initialisé des variables membres non initialisées qui entraînaient des lectures invalides lorsqu'il était exécuté sous valgrind.
 
 **[Noyau Linux](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/log/?qt=grep&q=PORTAY)** J'ai ajouté deux nouvelles plateformes basées sur des SoC d'Atmel (device-tree).
 
-**[Atmel at91bootstrap](https://github.com/linux4sam/at91bootstrap/commits?author=gazoo74)** J'ai ajouté le support d'UBI. Le but est d'améliorer les mises à jour critiques vis-à-vis d'éventuelles coupures de courant. Les volumes critiques, tels que les noyaux ou les bootloaders, sont dupliqués et stockés dans des volumes UBI statiques. Le bootstrap vérifie simplement l'intégrité du volume en utilisant le bit de mise à jour présent dans l'en-tête UBI.
+**[Atmel at91bootstrap](https://github.com/linux4sam/at91bootstrap/commits?author=gportay)** J'ai ajouté le support d'UBI. Le but est d'améliorer les mises à jour critiques vis-à-vis d'éventuelles coupures de courant. Les volumes critiques, tels que les noyaux ou les bootloaders, sont dupliqués et stockés dans des volumes UBI statiques. Le bootstrap vérifie simplement l'intégrité du volume en utilisant le bit de mise à jour présent dans l'en-tête UBI.
 
-**[CURL](https://github.com/bagder/curl/commits?author=gazoo74)** J'ai mis à jour libcurl afin qu'il soit compatible avec la dernière version des API de la librairie PolarSSL. J'ai également corrigé un bogue avec le mécanisme de polling qui entraînait un timeout lors de la négociation SSL avec le serveur distant.
+**[CURL](https://github.com/bagder/curl/commits?author=gportay)** J'ai mis à jour libcurl afin qu'il soit compatible avec la dernière version des API de la librairie PolarSSL. J'ai également corrigé un bogue avec le mécanisme de polling qui entraînait un timeout lors de la négociation SSL avec le serveur distant.
 
 **[OPKG](http://git.yoctoproject.org/cgit/cgit.cgi/opkg/log/?qt=grep&q=PORTAY)** J'ai amélioré l'intégration de CURL en autorisant certaines options liées à libcurl dans le fichier de configuration. J'ai également corrigé des comportements inattendus.
 
-**[Dropbear](https://github.com/mkj/dropbear/commits?author=gazoo74)** J'ai corrigé les warnings de compilation du projet.
+**[Dropbear](https://github.com/mkj/dropbear/commits?author=gportay)** J'ai corrigé les warnings de compilation du projet.
 
 ### Divers
 
@@ -94,27 +94,27 @@
 
 ### Personnels
 
-*2018* ***[blkpg-part](https://gazoo74.github.io/blkpg-part/)*** *Utilitaire de table de partition et géométrie du disque*
+*2018* ***[blkpg-part](https://gportay.github.io/blkpg-part/)*** *Utilitaire de table de partition et géométrie du disque*
 
 > blkpg-part créait, redimensionne et supprime des partitions à la volée sans enregistrer les changements dans la table de partition. Grâce à blkpg-part, il est possible d'exporter des bloc consécutives, qui ne font pas partie d'une partition, comme un périphérique temporaire. Un cas typique d'utilisation dans les systèmes embarqués est d'exporter les binaires qui sont stockés dans des périphériques de type bloc (i.e. des binaires qui ne sont pas enregistrés dans un système de fichier).
 
-*2018* ***[kmake](https://gazoo74.github.io/kmake/)*** *Extention de Kbuild*
+*2018* ***[kmake](https://gportay.github.io/kmake/)*** *Extention de Kbuild*
 
 > kmake fonctionne au-dessus de make en utilisant des Makefiles pour étendre les fonctionnalités de Kbuild. Il complète le système de construction du noyau avec la construction d'un rootfs minimal et d'une règle Qemu supplémentaire pour émuler le noyau linux au coté d'un espace utilisateur. L'espace utilisateur est une petite archive cpio en InitRAMFS basée sur une compilation statique de busybox.
 
-*2017-2018* ***[dosh](https://gazoo74.github.io/dosh/)*** *Execute un shell utilisateur dans un conteneur*
+*2017-2018* ***[dosh](https://gportay.github.io/dosh/)*** *Execute un shell utilisateur dans un conteneur*
 
 > dosh est une interface à la shell écrit in Bash pour docker-run. Il exécute les commandes dans un conteneur ; utilisant les droits utilisateurs, avec le répertoire courant monté.
 
-*2017-2018* ***[tini](https://gazoo74.github.io/tini/)*** *Simple démon d'initialisation*
+*2017-2018* ***[tini](https://gportay.github.io/tini/)*** *Simple démon d'initialisation*
 
 > tini est un petit démon d'initialisation qui démarre des processus et s'occupe des processus zombies.
 
-*2015-2017* ***[mpkg](https://gazoo74.github.io/mpkg)*** *Gestion des paquets depuis un script shell*
+*2015-2017* ***[mpkg](https://gportay.github.io/mpkg)*** *Gestion des paquets depuis un script shell*
 
 > mPKG est un gestionnaire de paquet léger et écrit en pure Shell. Il utilise des utilitaires comme sh, grep, tar, wget et awk fournit par tout système POSIX. mPKG est adapté aux systèmes embarqués utilisant Busybox.
 
-*2015-2018* ***[templates](https://gazoo74.github.io/templates/)*** *Quelques exemples de code.*
+*2015-2018* ***[templates](https://gportay.github.io/templates/)*** *Quelques exemples de code.*
 
 > Ces exemples de code sont principalement écrit en C/C++, Shell/Bash and make/Makefile. Ces langages sont les fondations du développement bas niveau et système.
 
