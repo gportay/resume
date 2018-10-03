@@ -1,14 +1,14 @@
-See my résumé in [:us:](en_US/) or in [:fr:](fr_FR/), or download them in [:us:](pdf/english.pdf) or in [:fr:](pdf/french.pdf). You may also download the [lite version](pdf/french-lite.pdf) or my [portfolio](pdf/portfolio-french.pdf), both in french.
+See my resume in [:us:](en_US/) or in [:fr:](fr_FR/), or download them in [:us:](pdf/english.pdf) or in [:fr:](pdf/french.pdf). You may also download the [lite version](pdf/french-lite.pdf) or my [portfolio](pdf/portfolio-french.pdf), both in french.
 
 Information about my [contributions](#contributions) and my [projects](#projects) follows. My personal projects serve as showcases to express and develop my skills (mostly in _C_, _Shell_ and _Makefile_). The list of my contributions shows how I embraced and how far I am involved in _Free Software_.
 
 ---
 
-# How to compile my résumé
+# How to compile my resume
 
 First you will need to install *LaTeX*, *pdflatex*, *epstopdf* and *Mordern CV* onto you system. Follow instructions from [prerequisite](#prerequisite) or go directly to the [compile](#compile) section.
 
-If neither [texlive] nor [moderncv] are installed on the system, the résumé can be build using [Docker] and in-tree [Dockerfile]. Go to the [docker](#docker) section.
+If neither [texlive] nor [moderncv] are installed on the system, the resume can be build using [Docker] and in-tree [Dockerfile]. Go to the [docker](#docker) section.
 
 ## [Prerequisite](#=prerequisite)
 
@@ -40,11 +40,11 @@ or
 pdflatex english.tex
 ```
 
-... voilà! my résumé is available under *[english.pdf](pdf/english.pdf)*.
+... voilà! my resume is available under *[english.pdf](pdf/english.pdf)*.
 
 Enjoy!
 
-PS: Check also *[french.pdf](pdf/french.pdf)* and *[french-short.pdf](pdf/french-short.pdf)* or build résumés for *Québec*:
+PS: Check also *[french.pdf](pdf/french.pdf)* and *[french-short.pdf](pdf/french-short.pdf)* or build resumes for *Québec*:
 
 ```
 make quebec
