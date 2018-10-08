@@ -46,6 +46,8 @@
 
 **[Buildroot](https://github.com/buildroot/buildroot/commits?author=gportay)** J'ai ajouté le paquet QtWebEngine et la configuration Raspberry Pi 3 (64-bits).
 
+**[Barebox](https://git.pengutronix.de/cgit/barebox/log/?qt=grep&q=PORTAY)** J'ai modifié l'implementation de readline pour prévenir l'affichage de caractères non imprimables et de boucler à l'infinie. J'ai corrigé le déréférencement d'un pointeur NULL qui causait un crash.
+
 **[genimage](https://github.com/pengutronix/genimage/commits?author=gportay)** J'ai ajouté une propriété à hdimage pour configurer la position de la partition étendue enregistrée dans le Master Boot Record.
 
 **[Lighttpd](https://github.com/lighttpd/lighttpd1.4/commits?author=gportay)** J'ai ajouté le support des CRLs pour la vérification du certificat client et ignoré les erreurs de vérification du certificat client si l'option n'est pas forcée.
