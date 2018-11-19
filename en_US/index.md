@@ -8,7 +8,9 @@
 
 ### Vocational
 
-*March 2016 - Today* **Free Software Consultant** *Savoir-Faire Linux*
+*November 2018 - Today* **Senior Software Developer** *Collabora*
+
+*March 2016 - October 2018* **Free Software Consultant** *Savoir-Faire Linux*
 
 > Savoir-Faire Linux is a company of consultants specialized in _Free-Software_. I am part of the Industrial Solution Team who is in charge of developing the _Linux Embedded Systems_ that are embedded in the devices of our customers.
 > *  I implemented a framework in C++ 11 to exchange data between different devices. I used _ZeroMQ_ as the bus for communications and _Protobuf_ as the format for data exchange. I developed a system of plug-in based on _ld_. The code is covered using _gcov_.
