@@ -23,8 +23,8 @@
 
 /^\\begin{document}$/,/^\\end{document}$/ {
 	s,\\href{\([a-zA-Z0-9_.@:/&?=-]*\)}{\([a-zA-Z0-9_\ .()@-]*\)},*[\2](\1)*,g
-	s,\\textbf{\([a-zA-Z0-9_\ .()@-]*\)},**\1**,g
-	s,\\textit{\([a-zA-Z0-9_\ .()@-]*\)},_\1_,g
+	s,\\textbf{\([a-zA-Z0-9àéè_\ .()@-]*\)},**\1**,g
+	s,\\textit{\([a-zA-Z0-9àéè_\ .()@-]*\)},_\1_,g
 	s,\\textmu,u,g
 	s,\\LaTeX,LaTeX,g
 	s,\\newline,,g
