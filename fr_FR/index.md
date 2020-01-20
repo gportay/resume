@@ -10,6 +10,15 @@
 
 *Novembre 2018 - Today* **Développeur Logiciel Sénior** *Collabora*
 
+> *  Analyser les problèmes des clients et concevoir des solutions en utilisant les technologies open source et l'expertise technique de Collabora.
+> *  Définition et cadrage des projets clients en collaboration avec l'équipe de livraison.
+> *  Discuter des technologies des systèmes de base Linux avec les clients et représenter l'entreprise lors de conférences et de salons professionnels pour démontrer et promouvoir notre leadership dans le domaine de l'open source.
+> *  Contribuer publiquement à des projets open source pour assurer le leadership technique continu de Collabora.
+> *  Implémentation de pilotes, protocoles, systèmes et infrastructure de support du noyau Linux.
+> *  Prise en charge d'autres ingénieurs Collabora dans le monde entier pour comprendre la pile Linux de bas niveau.
+> *  Acquérir une connaissance pratique des produits, des applications, des forces techniques et commerciales des clients et des marchés ciblés.
+> *  Comprendre les besoins des clients et concilier les contraintes de temps, les technologies et ressources disponibles et les meilleurs pratiques open source.
+
 *Mars 2016 - Aujourd'hui* **Consultant en Logiciel Libres** *Savoir-faire Linux*
 
 > Savoir-faire Linux est une entreprise de consultants spécialisés dans le _Logiciel Libre_. Je fais parti de l'équipe Solution Industrielle qui est en charge de développer les _Systèmes Embarqués Linux_ qui équipent les objets connectés de nos clients.
