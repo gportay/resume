@@ -8,6 +8,8 @@
 
 ### Professionnelles
 
+*Novembre 2018 - Today* **Développeur Logiciel Sénior** *Collabora*
+
 *Mars 2016 - Aujourd'hui* **Consultant en Logiciel Libres** *Savoir-faire Linux*
 
 > Savoir-faire Linux est une entreprise de consultants spécialisés dans le _Logiciel Libre_. Je fais parti de l'équipe Solution Industrielle qui est en charge de développer les _Systèmes Embarqués Linux_ qui équipent les objets connectés de nos clients.
