@@ -161,7 +161,7 @@
 
 *Anglais* **Bonnes connaissances**
 
-> J'ai voyagé un an en Australie et Nouvelle-Zélande (d'avril 2009 à mars 2010). J'ai obtenu 765 au TOEIC in 2008.
+> 
 
 ## Compétences techniques
 

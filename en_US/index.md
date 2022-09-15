@@ -152,7 +152,7 @@
 
 *English* **Good knowledge**
 
-> I spent one year traveling around Australia and New-Zealand (from April 2009 to March 2010). I scored 765 at TOEIC in 2008.
+> 
 
 ## Computer skills
 
