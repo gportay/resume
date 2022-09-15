@@ -179,8 +179,8 @@
 
 ## Références
 
-*Overkiz, SAS.* Florent PELLARIN, Directeur des Opérations (*[f.pellarin@overkiz.com](mailto:f.pellarin@overkiz.com)*)
+*Overkiz* Florent PELLARIN, Directeur des Opérations (*[f.pellarin@overkiz.com](mailto:f.pellarin@overkiz.com)*)
 
-*Savoir-Faire Linux, Inc.* Jérôme OUFELLA, Vice Président Technologie (*[jerome.oufella@savoirfairelinux.com](mailto:jerome.oufella@savoirfairelinux.com)*)
+*Savoir-Faire Linux* Jérôme OUFELLA, Vice Président Technologie (*[jerome.oufella@savoirfairelinux.com](mailto:jerome.oufella@savoirfairelinux.com)*)
 
-*Collabora, Inc.* Dave BEVAN, Responsable du Personnel d'Ingénierie (*[dave.bevan@collabora.com](mailto:dave.bevan@collabora.com)*)
+*Collabora* Dave BEVAN, Responsable du Personnel d'Ingénierie (*[dave.bevan@collabora.com](mailto:dave.bevan@collabora.com)*)
