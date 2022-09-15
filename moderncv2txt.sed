@@ -1,6 +1,7 @@
 #!/bin/sed -nf
 #
-#  Copyright (C) 2018 Savoir-Faire Linux Inc.
+#  Copyright (C) 2018 Savoir-Faire Linux, Inc.
+#                2022 Gaël PORTAY
 #
 #  Authors:
 #      Gaël PORTAY <gael.portay@savoirfairelinux.com>

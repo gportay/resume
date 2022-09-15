@@ -183,4 +183,4 @@
 
 *Overkiz, SAS.* Florent PELLARIN, Directeur des Opérations (*[f.pellarin@overkiz.com](mailto:f.pellarin@overkiz.com)*)
 
-*Savoir-Faire Linux Inc.* Jérôme OUFELLA, Vice Président Technologie (*[jerome.oufella@savoirfairelinux.com](mailto:jerome.oufella@savoirfairelinux.com)*)
+*Savoir-Faire Linux, Inc.* Jérôme OUFELLA, Vice Président Technologie (*[jerome.oufella@savoirfairelinux.com](mailto:jerome.oufella@savoirfairelinux.com)*)
