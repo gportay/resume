@@ -38,14 +38,25 @@
 \subsection{Professionnelles}
 \cventry{Novembre 2018--Juin 2022}{Développeur Logiciel Sénior}{Collabora}{Montréal}{}{
 \begin{itemize}
-\item Analyser les problèmes des clients et concevoir des solutions en utilisant les technologies open source et l'expertise technique de Collabora.
-\item Définition et cadrage des projets clients en collaboration avec l'équipe de livraison.
-\item Discuter des technologies des systèmes de base Linux avec les clients et représenter l'entreprise lors de conférences et de salons professionnels pour démontrer et promouvoir notre leadership dans le domaine de l'open source.
-\item Contribuer publiquement à des projets open source pour assurer le leadership technique continu de Collabora.
-\item Implémentation de pilotes, protocoles, systèmes et infrastructure de support du noyau Linux.
-\item Prise en charge d'autres ingénieurs Collabora dans le monde entier pour comprendre la pile Linux de bas niveau.
-\item Acquérir une connaissance pratique des produits, des applications, des forces techniques et commerciales des clients et des marchés ciblés.
-\item Comprendre les besoins des clients et concilier les contraintes de temps, les technologies et ressources disponibles et les meilleurs pratiques open source.
+\item Investigation et déboguage du noyau Linux
+\begin{itemize}
+\item Analyse de la diminution de performances de transfert sur le bus SPI (kernelshark)
+\item Résolution de deux bloquages systèmes du pilote V4L2 de la plateforme i.MX6
+\item Analyse d'un bloquage système dans l'allocateur de mémoire continue (CMA)
+\end{itemize}
+\item Création d'une distribution dédié au jeu vidéo basée sur Arch Linux
+\begin{itemize}
+\item Modification/création de paquets et mise en place du dépot (pacman, makepkg)
+\item Création d'une image et des artéfacts de mise à jour (RAUC, casync)
+\item Mise en place de la configuration et developpement de plugins pour l'installateur multi-platforme (calamares)
+\item Création de scripts et de conteneurs (bash, Docker)
+\item Redistribution des contributions aux logiciels libres (systemd, plymouth, grub...)
+\end{itemize}
+\item Création de plugins fwupd/LVFS pour la mise à jour de micro-logiciels
+\begin{itemize}
+\item Ajout des hubs USB Genesys Logic et des moniteurs USB-C HP
+\item Ajout des souris esport Steelseries via les connections sans-fil 2.4G et filaire USB
+\end{itemize}
 \end{itemize}
 }
 \cventry{Mars 2016--Octobre 2018}{Consultant en Logiciel Libre}{Savoir-Faire Linux}{Montréal}{}{
@@ -67,6 +78,7 @@
 \item Support d'UBI dans at91bootstrap pour sécurisation de mises à jour critiques (C)
 \end{itemize}
 }
+\pagebreak
 \subsection{Stages}
 \cventry{2008}{Stage Ingénieur de 3e année}{Freescale Semiconductors}{Toulouse}{}{Développement d'un pilote de charge de batterie Lithium-ion sous Nokia S60 (Symbian OS)}
 \cventry{2007}{Stage Ingénieur de 2ème année}{Sagem Monetel}{Valence}{}{Optimisation de l’emprunte mémoire d'une application C embarquée ; 30\% de gain}
