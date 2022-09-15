@@ -27,7 +27,6 @@
 	s,\\textbf{\([àéèa-zA-Z0-9_\ .()@-]*\)},\1,g
 	s,\\textit{\([àéèa-zA-Z0-9_\ .()@-]*\)},\1,g
 	s,\\textmu,u,g
-	s,\\LaTeX,LaTeX,g
 	s,\\newline,,g
 	s,\\linebreak\[[0-5]\], ,g
 	s,\\linebreak, ,g

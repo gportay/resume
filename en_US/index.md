@@ -156,9 +156,9 @@
 
 ## Computer skills
 
-*Programming languages* Shell/Bash scripting, Python, C/C++ (11, STL), Assemblers (68k, MIPS), Java, VHDL, LaTeX
+*Programming languages* Shell, Makefile, C/C++
 
-*Others* Linux Kernel, Git, Autotools, Cross-compilation, Yocto
+*Others* Linux Kernel, Git, Cross-compilation, Yocto
 
 ## Interests
 

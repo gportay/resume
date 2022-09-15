@@ -165,9 +165,9 @@
 
 ## Compétences techniques
 
-*Langages de programmation* Scripts Shell/Bash, Python, C/C++ (11, STL), Assembleurs (68k, MIPS), Java, VHDL, LaTeX
+*Langages de programmation* Shell, Makefile, C/C++
 
-*Autres* Linux Kernel, Git, Autotools, Cross-compilation, Yocto
+*Autres* Linux Kernel, Git, Cross-compilation, Yocto
 
 ## Centres d'intérêts
 
