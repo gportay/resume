@@ -8,7 +8,7 @@
 
 ### Vocational
 
-*November 2018 - Today* **Senior Software Developer** *Collabora*
+*November 2018 - June 2022* **Senior Software Developer** *Collabora*
 
 *March 2016 - October 2018* **Free Software Consultant** *Savoir-Faire Linux*
 

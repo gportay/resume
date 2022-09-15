@@ -8,7 +8,7 @@
 
 ### Professionnelles
 
-*Novembre 2018 - Today* **Développeur Logiciel Sénior** *Collabora*
+*Novembre 2018 - Juin 2022* **Développeur Logiciel Sénior** *Collabora*
 
 > *  Analyser les problèmes des clients et concevoir des solutions en utilisant les technologies open source et l'expertise technique de Collabora.
 > *  Définition et cadrage des projets clients en collaboration avec l'équipe de livraison.
