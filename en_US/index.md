@@ -158,7 +158,7 @@
 
 *Programming languages* Shell, Makefile, C/C++
 
-*Others* Linux Kernel, Git, Cross-compilation, Yocto
+*Others* Linux Kernel, Git, Cross-compilation, Yocto, Buildroot, Docker
 
 ## Interests
 

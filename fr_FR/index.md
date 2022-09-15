@@ -167,7 +167,7 @@
 
 *Langages de programmation* Shell, Makefile, C/C++
 
-*Autres* Linux Kernel, Git, Cross-compilation, Yocto
+*Autres* Linux Kernel, Git, Cross-compilation, Yocto, Buildroot, Docker
 
 ## Centres d'intérêts
 
