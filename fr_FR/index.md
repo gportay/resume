@@ -2,7 +2,7 @@
 
 ---
 
-# Consultant en Logiciel Libres
+# Consultant en Logiciels Libres
 
 ## Expériences
 
