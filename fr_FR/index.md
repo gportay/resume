@@ -177,8 +177,6 @@
 
 *Tennis de table* Joueur, arbitre et entraineur (9 ans).
 
-*Photographie* Amateur, Canon EOS 500D
-
 ## Références
 
 *Overkiz, SAS.* Florent PELLARIN, Directeur des Opérations (*[f.pellarin@overkiz.com](mailto:f.pellarin@overkiz.com)*)

@@ -168,8 +168,6 @@
 
 *Table tennis* Player, referee, and coach (9-year practicing).
 
-*Photography* Hobbyist, Canon EOS 500D
-
 ## References
 
 *Overkiz, SAS.* Florent PELLARIN, Chief Operational Officer (*[f.pellarin@overkiz.com](mailto:f.pellarin@overkiz.com)*)
