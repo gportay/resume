@@ -38,11 +38,7 @@ pdflatex english.tex
 
 Enjoy!
 
-PS: Check also *[french.pdf](pdf/french.pdf)* and *[french-lite.pdf](pdf/french-lite.pdf)* or build resumes for *Québec*:
-
-```
-make quebec
-```
+PS: Check also *[french.pdf](pdf/french.pdf)* and *[french-lite.pdf](pdf/french-lite.pdf)*.
 
 ## [Docker](#=docker)
 

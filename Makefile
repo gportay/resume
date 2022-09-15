@@ -1,7 +1,7 @@
 #
 # The MIT License (MIT)
 #
-# Copyright (c) 2015-2018 Gaël PORTAY <gael.portay@gmail.com>
+# Copyright (c) 2015-2018,2022 Gaël PORTAY <gael.portay@gmail.com>
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -33,23 +33,12 @@ MD		:= en_US/index.md fr_FR/index.md
 .PHONY: all
 all: $(PDF) $(MD)
 
-$(PDF) $(HTML) french-quebec.pdf english-quebec.pdf:
-
-.PHONY: quebec
-quebec: french-quebec.pdf english-quebec.pdf
-
-.INTERMEDIATE: french-quebec.tex english-quebec.tex
-french-quebec.tex english-quebec.tex:
+$(PDF) $(HTML):
 
 .PHONY: git
 git:
 	git config user.name "Gaël PORTAY"
 	git config user.email "gael.portay@gmail.com"
-
-%-quebec.tex: %.tex
-	sed -e "1,/\\begin{document}/{s,Engineer,Developer,;s,Ingénieur,Développeur,}" \
-	    -e "/\\section{.*[Ee]xp[eé]riences}/,/^$$/{s,Engineer,Developer,;s,Ingénieur,Développeur,}" \
-	    $< >$@
 
 %.pdf: %.tex
 	$(PDFLATEX) $< $@
@@ -74,7 +63,7 @@ fr_FR/index.md: french.tex | fr_FR
 
 .PHONY: clean
 clean:
-	rm -f *.pdf *.html *-quebec.tex $(MD)
+	rm -f *.pdf *.html $(MD)
 
 .PHONY: mrproper
 mrproper: clean
