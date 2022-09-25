@@ -37,16 +37,27 @@
 
 \section{Expériences}
 \subsection{Professionnelles}
-\cventry{Novembre 2018--Juin 2022}{Développeur Logiciel Sénior}{Collabora}{Montréal}{}{
+\cventry{Novembre 2018--Juin 2022}{Développeur Logiciel Senior}{Collabora}{Montréal}{}{Collabora est une entreprise internationale de consultants spécialisés dans le \textit{Logiciel Libre}. Je fais parti de l'équipe Core de la branche ingénierie qui est en charge d'analyser les problèmes des clients et de concevoir des solutions en utilisant à la fois les technologies issues des \textit{logiciels libres} et l'expertise technique de l'entreprise.
 \begin{itemize}
-\item Analyser les problèmes des clients et concevoir des solutions en utilisant les technologies open source et l'expertise technique de Collabora.
-\item Définition et cadrage des projets clients en collaboration avec l'équipe de livraison.
-\item Discuter des technologies des systèmes de base Linux avec les clients et représenter l'entreprise lors de conférences et de salons professionnels pour démontrer et promouvoir notre leadership dans le domaine de l'open source.
-\item Contribuer publiquement à des projets open source pour assurer le leadership technique continu de Collabora.
-\item Implémentation de pilotes, protocoles, systèmes et infrastructure de support du noyau Linux.
-\item Prise en charge d'autres ingénieurs Collabora dans le monde entier pour comprendre la pile Linux de bas niveau.
-\item Acquérir une connaissance pratique des produits, des applications, des forces techniques et commerciales des clients et des marchés ciblés.
-\item Comprendre les besoins des clients et concilier les contraintes de temps, les technologies et ressources disponibles et les meilleurs pratiques open source.
+\item Investigation et débogage du noyau Linux
+\begin{itemize}
+\item J'ai analysé la diminution de performances de transferts sur le bus \textit{SPI} avec \textit{kernelshark}, suite à une mise à jour du noyau Linux et de son sous système \textit{SPI}.
+\item J'ai participé à la résolution de deux blocages systèmes du pilote \textit{V4L2} sur la plateforme i.MX6 ; lorsque le flux vidéo est stoppé puis redémarré immédiatement.
+\item J'ai analysé un inter blocage dans l'allocation de mémoire continue \textit{CMA} sur l'architecture \textit{ARM} ; lorsqu'une tâche effectue une allocation de mémoire continue entraînant la migration de page sur d'autres tâches pouvant elles-mêmes nécessiter de nouvelles allocations de mémoire continue.
+\end{itemize}
+\item J'ai participé à la création d'une distribution dédiée au jeu vidéo basée sur \textit{Arch Linux}
+\begin{itemize}
+\item J'ai modifié et créé des paquets avec \textit{makepkg} via les fichiers \textit{PKGBUILD}, et j'ai mis en place le dépôt pour le gestionnaire de paquets \textit{pacman} en développant des scripts \textit{Shell} utilisant \textit{repo-add} et \textit{repo-remove}.
+\item J'ai créé des images disques \textit{UEFI} ainsi que ses artefacts de mise à jour \textit{RAUC} et \textit{casync}.
+\item J'ai participé à la mise en place la configuration de l'installateur multiplateforme \textit{calamares} et j'ai développé plusieurs plugins spécifiques en \textit{Python}.
+\item J'ai participe à la création de scripts \textit{Shell} et des conteneurs \textit{Docker} pour l'automatisation des tâches de constructions de paquets et d'images sur \textit{Jenkins} puis \textit{GitLab} CI/CD.
+\item J'ai effectué la redistribution des contributions aux logiciels libres (\textit{systemd}, \textit{plymouth}, \textit{grub-debian}, \textit{debian-installer}, \textit{dracut}, \textit{calamares}, \textit{RAUC}, \textit{casync}...).
+\end{itemize}
+\item Création de plugins \textit{fwupd}/\textit{LVFS} pour la mise à jour de micro logiciels de périphériques
+\begin{itemize}
+\item J'ai ajouté le support pour la mise à jour des hubs \textit{USB} Genesys Logic et des moniteurs \textit{USB-C} HP.
+\item J'ai ajouté le support pour la mise à jour des souris «~esport~» Steelseries via la connections sans-fil \textit{2.4G} et la connections filaire \textit{USB}.
+\end{itemize}
 \end{itemize}
 }
 \cventry{Mars 2016--Aujourd'hui}{Consultant en Logiciel Libres}{Savoir-faire Linux}{Montréal}{}{Savoir-faire Linux est une entreprise de consultants spécialisés dans le \textit{Logiciel Libre}. Je fais parti de l'équipe Solution Industrielle qui est en charge de développer les \textit{Systèmes Embarqués Linux} qui équipent les objets connectés de nos clients.
@@ -65,7 +76,6 @@
 \item J'ai développé des modules noyaux et ajouté le support de deux nouvelles cartes électroniques développées par notre équipe dans le noyau Linux.
 \end{itemize}
 }
-\newpage
 \subsection{Stages}
 \cventry{2009}{Stage de Master}{LC Mobility}{Australie}{}{LC Mobility est une entreprise spécialisée dans l’accueil de doctorants étrangers. J’ai effectué une étude de marché sur la mobilité des étudiants australiens, en Australie.}
 \cventry{2008}{Stage Ingénieur de 3e année}{Freescale Semiconductors}{Toulouse}{}{J'ai été responsable du développement du pilote de charge de batterie de la plateforme de téléphonie mobile de Freescale (ARM-11). Ce téléphone mobile est alimenté par une batterie Li-ion. Il fonctionne sous Nokia S60 (Symbian OS). J'ai développé le pilote en C++ en utilisant les mécanismes propres à Symbian.}
@@ -73,7 +83,7 @@
 \cventry{2004}{Stage Technicien de 2de année de DUT}{Sagem Monetel}{Valence}{}{J’ai eut la charge de porter une application C embarquée vers le compilateur libre GNU/GCC. J’ai également développé un outil de test de performance afin de démontrer la puissance du terminal de paiement durant une transaction bancaire.}
 \subsection{Contributions Open-Source}
 \cvitem{\href{https://github.com/buildroot/buildroot/commits?author=gportay}{Buildroot}}{J'ai ajouté le paquet QtWebEngine et la configuration Raspberry Pi 3 (64-bits).}
-\cvitem{\href{https://git.pengutronix.de/cgit/barebox/log/?qt=grep&q=PORTAY}{Barebox}}{J'ai modifié l'implementation de readline pour prévenir l'affichage de caractères non imprimables et de boucler à l'infinie. J'ai corrigé le déréférencement d'un pointeur NULL qui causait un crash.}
+\cvitem{\href{https://git.pengutronix.de/cgit/barebox/log/?qt=grep&q=PORTAY}{Barebox}}{J'ai modifié l'implémentation de readline pour prévenir l'affichage de caractères non imprimables et de boucler à l'infinie. J'ai corrigé le déréférencement d'un pointeur NULL qui causait un crash.}
 \cvitem{\href{https://github.com/pengutronix/genimage/commits?author=gportay}{genimage}}{J'ai ajouté une propriété à hdimage pour configurer la position de la partition étendue enregistrée dans le Master Boot Record.}
 \cvitem{\href{https://github.com/lighttpd/lighttpd1.4/commits?author=gportay}{Lighttpd}}{J'ai ajouté le support des CRLs pour la vérification du certificat client et ignoré les erreurs de vérification du certificat client si l'option n'est pas forcée.}
 \cvitem{\href{https://github.com/jackaudio/jack2/commits?author=gportay}{jack2}}{J'ai initialisé des variables membres non initialisées qui entraînaient des lectures invalides lorsqu'il était exécuté sous valgrind.}

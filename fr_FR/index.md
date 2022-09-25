@@ -8,16 +8,22 @@
 
 ### Professionnelles
 
-*Novembre 2018 - Juin 2022* **Développeur Logiciel Sénior** *Collabora*
+*Novembre 2018 - Juin 2022* **Développeur Logiciel Senior** *Collabora*
 
-> *  Analyser les problèmes des clients et concevoir des solutions en utilisant les technologies open source et l'expertise technique de Collabora.
-> *  Définition et cadrage des projets clients en collaboration avec l'équipe de livraison.
-> *  Discuter des technologies des systèmes de base Linux avec les clients et représenter l'entreprise lors de conférences et de salons professionnels pour démontrer et promouvoir notre leadership dans le domaine de l'open source.
-> *  Contribuer publiquement à des projets open source pour assurer le leadership technique continu de Collabora.
-> *  Implémentation de pilotes, protocoles, systèmes et infrastructure de support du noyau Linux.
-> *  Prise en charge d'autres ingénieurs Collabora dans le monde entier pour comprendre la pile Linux de bas niveau.
-> *  Acquérir une connaissance pratique des produits, des applications, des forces techniques et commerciales des clients et des marchés ciblés.
-> *  Comprendre les besoins des clients et concilier les contraintes de temps, les technologies et ressources disponibles et les meilleurs pratiques open source.
+> Collabora est une entreprise internationale de consultants spécialisés dans le _Logiciel Libre_. Je fais parti de l'équipe Core de la branche ingénierie qui est en charge d'analyser les problèmes des clients et de concevoir des solutions en utilisant à la fois les technologies issues des _logiciels libres_ et l'expertise technique de l'entreprise.
+> *  Investigation et débogage du noyau Linux
+> *  J'ai analysé la diminution de performances de transferts sur le bus _SPI_ avec _kernelshark_, suite à une mise à jour du noyau Linux et de son sous système _SPI_.
+> *  J'ai participé à la résolution de deux blocages systèmes du pilote _V4L2_ sur la plateforme i.MX6 ; lorsque le flux vidéo est stoppé puis redémarré immédiatement.
+> *  J'ai analysé un inter blocage dans l'allocation de mémoire continue _CMA_ sur l'architecture _ARM_ ; lorsqu'une tâche effectue une allocation de mémoire continue entraînant la migration de page sur d'autres tâches pouvant elles-mêmes nécessiter de nouvelles allocations de mémoire continue.
+> *  J'ai participé à la création d'une distribution dédiée au jeu vidéo basée sur _Arch Linux_
+> *  J'ai modifié et créé des paquets avec _makepkg_ via les fichiers _PKGBUILD_, et j'ai mis en place le dépôt pour le gestionnaire de paquets _pacman_ en développant des scripts _Shell_ utilisant _repo-add_ et _repo-remove_.
+> *  J'ai créé des images disques _UEFI_ ainsi que ses artefacts de mise à jour _RAUC_ et _casync_.
+> *  J'ai participé à la mise en place la configuration de l'installateur multiplateforme _calamares_ et j'ai développé plusieurs plugins spécifiques en _Python_.
+> *  J'ai participe à la création de scripts _Shell_ et des conteneurs _Docker_ pour l'automatisation des tâches de constructions de paquets et d'images sur _Jenkins_ puis _GitLab_ CI/CD.
+> *  J'ai effectué la redistribution des contributions aux logiciels libres (_systemd_, _plymouth_, _grub-debian_, _debian-installer_, _dracut_, _calamares_, _RAUC_, _casync_...).
+> *  Création de plugins _fwupd_/_LVFS_ pour la mise à jour de micro logiciels de périphériques
+> *  J'ai ajouté le support pour la mise à jour des hubs _USB_ Genesys Logic et des moniteurs _USB-C_ HP.
+> *  J'ai ajouté le support pour la mise à jour des souris « esport » Steelseries via la connections sans-fil _2.4G_ et la connections filaire _USB_.
 
 *Mars 2016 - Aujourd'hui* **Consultant en Logiciel Libres** *Savoir-faire Linux*
 
@@ -57,7 +63,7 @@
 
 **[Buildroot](https://github.com/buildroot/buildroot/commits?author=gportay)** J'ai ajouté le paquet QtWebEngine et la configuration Raspberry Pi 3 (64-bits).
 
-**[Barebox](https://git.pengutronix.de/cgit/barebox/log/?qt=grep&q=PORTAY)** J'ai modifié l'implementation de readline pour prévenir l'affichage de caractères non imprimables et de boucler à l'infinie. J'ai corrigé le déréférencement d'un pointeur NULL qui causait un crash.
+**[Barebox](https://git.pengutronix.de/cgit/barebox/log/?qt=grep&q=PORTAY)** J'ai modifié l'implémentation de readline pour prévenir l'affichage de caractères non imprimables et de boucler à l'infinie. J'ai corrigé le déréférencement d'un pointeur NULL qui causait un crash.
 
 **[genimage](https://github.com/pengutronix/genimage/commits?author=gportay)** J'ai ajouté une propriété à hdimage pour configurer la position de la partition étendue enregistrée dans le Master Boot Record.
 
