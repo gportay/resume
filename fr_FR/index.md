@@ -49,7 +49,7 @@
 
 > J’ai été chargé d’optimiser l’emprunte mémoire (dynamique et statique) d'une application C embarquée dans un terminal de paiement bancaire. J’ai utilisé les fichiers listing et mapping générés par le compilateur libre GNU/GCC pour localiser les parties de code utilisant le plus de ressources mémoires. J’ai réduit la taille de l’application de plus de 30 %.
 
-*2004* **Stage Technicien de 2e année de DUT** *Sagem Monetel*
+*2004* **Stage Technicien de 2de année de DUT** *Sagem Monetel*
 
 > J’ai eut la charge de porter une application C embarquée vers le compilateur libre GNU/GCC. J’ai également développé un outil de test de performance afin de démontrer la puissance du terminal de paiement durant une transaction bancaire.
 
