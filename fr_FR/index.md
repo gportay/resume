@@ -101,7 +101,7 @@
 
 *2001 - 2002* **DEUG SV** *Université de Savoie*
 
-> 1ère année de Diplôme d’Etudes Universitaires Générales en Science de la Vie.
+> 1re année de Diplôme d’Etudes Universitaires Générales en Science de la Vie.
 
 ## Projets
 
