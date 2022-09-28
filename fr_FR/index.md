@@ -22,7 +22,7 @@
 *Mars 2016 - Aujourd'hui* **Consultant en Logiciel Libres** *Savoir-faire Linux*
 
 > Savoir-faire Linux est une entreprise de consultants spécialisés dans le _Logiciel Libre_. Je fais parti de l'équipe Solution Industrielle qui est en charge de développer les _Systèmes Embarqués Linux_ qui équipent les objets connectés de nos clients.
-> *  J'ai développé un framework en C++ 11 d'échange de données entre différents objets connectés. J'ai utilisé _ZeroMQ_ comme bus de communication et _Protobuf_ comme format pour les données échangées. J'ai développé un système de plug-in basé sur _ld_. Le code est couvert en utilisant _gcov_.
+> *  J'ai développé un framework en C++ 11 d'échange de données entre différents objets connectés. J'ai utilisé _ZeroMQ_ comme bus de communication et _Protobuf_ comme format pour les données échangées. J'ai développé un système de plugin basé sur _ld_. Le code est couvert en utilisant _gcov_.
 > *  J'ai mis à jour le logiciel embarqué d'un objet connecté vers la dernière version de _Yocto_. J'ai migré le système d'init vers systemd. J'ai résolu les problèmes bas niveau et système.
 > *  J'ai personnalisé l'interface développée en _LuCI_ d'un périphérique réseau basé sur _OpenWRT_. J'ai compilé et configuré le démon docker pour faire fonctionner des images _Docker_ sur ce périphérique.
 
