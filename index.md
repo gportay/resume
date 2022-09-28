@@ -1,4 +1,4 @@
-See my resume in [:us:](en_US/) or in [:fr:](fr_FR/), or download them in [:us:](pdf/english.pdf) or in [:fr:](pdf/french.pdf). You may also download the [lite version](pdf/french-lite.pdf) or my [portfolio](pdf/portfolio-french.pdf), both in french.
+See my resume in [:us:](en_US/) or in [:fr:](fr_FR/), or download them in [:us:](pdf/english.pdf) or in [:fr:](pdf/french.pdf). You may also download the [lite version](pdf/french-lite.pdf) in french.
 
 ---
 
