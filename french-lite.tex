@@ -1,5 +1,5 @@
 %% french-lite.tex
-%% Copyright 2015-2020,2022 Gaël PORTAY <gael.portay@gmail.com>
+%% Copyright 2015-2020,2022,2025 Gaël PORTAY <gael.portay@gmail.com>
 %
 % This work may be distributed and/or modified under the
 % conditions of the LaTeX Project Public License, either version 1.3
@@ -35,6 +35,25 @@
 \makecvtitle
 
 \section{Expériences Professionnelles}
+\cventry{Novembre 2022--Aujourd'hui}{Développeur Linux Embarqué Senior}{Rtone}{Annecy}{}{
+\begin{itemize}
+\item Coresponsable de deux distributions embarquées Yocto/OpenEmbedded
+\begin{itemize}
+\item Mise-à-jour de dunfell vers kirkstone (bitbake, kas)
+\item Développement de recettes spécifiques aux logiciels métiers du client (bitbake)
+\item Ajout de nouvelles recettes pour des projets open-source existant (certmonger, cyrus-sasl, freeipa-client)
+\item Correction d'une recette d'un project open-source (sssd)
+\item Développement de scripts se programmation pour un installateur USB/SD de la mémoire interne de passerelles connectées utilisant les artefacts de compilation (bash, systemd-repartd, systemd-growfs, rauc)
+\end{itemize}
+\item Développement applicatif métier
+\begin{itemize}
+\item Deux simulateurs commandées par une API REST (python, fastapi, modbus)
+\item Echange de données entre la passerelle et le Cloud (python, azure-iot-edge)
+\item Ajout de nouvelles fonctionnalitées et de correctifs dans un applicatif ancien (C, zigbee)
+\item Modification dans un BSP non-standard et ancien (realtek, Makefile, shell)
+\end{itemize}
+\end{itemize}
+}
 \cventry{Novembre 2018--Juin 2022}{Développeur Logiciel Senior}{Collabora}{Montréal}{}{
 \begin{itemize}
 \item Investigation et débogage du noyau Linux
@@ -78,7 +97,6 @@
 \end{itemize}
 }
 
-\pagebreak
 \section{Stages}
 \cventry{2008}{Stage Ingénieur de 3e année}{Freescale Semiconductors}{Toulouse}{}{Développement d'un pilote de charge de batterie Lithium-ion sous Nokia S60 (Symbian OS)}
 \cventry{2007}{Stage Ingénieur de 2e année}{Sagem Monetel}{Valence}{}{Optimisation de l’emprunte mémoire d'une application C embarquée ; 30\% de gain}
@@ -95,6 +113,7 @@
 \cvitemwithcomment{Français}{Langue maternelle}{}
 \cvitemwithcomment{Anglais}{Bonnes connaissances}{}
 
+\pagebreak
 \section{Compétences techniques}
 \cvitem{Langages de programmation}{Shell, Makefile, C/C++}
 \cvitem{Autres}{Linux Kernel, Git, Cross-compilation, Yocto, Buildroot, Docker}
